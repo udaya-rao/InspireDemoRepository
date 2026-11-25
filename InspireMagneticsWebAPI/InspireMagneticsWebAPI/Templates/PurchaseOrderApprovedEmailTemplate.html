@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Order Approved For PO No.: #PurchaseOrderNo#</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Optional: small mobile tweak; Gmail supports simple @media rules -->
+    <style>
+        @media only screen and (max-width: 600px) {
+            .wrapper {
+                width: 100% !important;
+            }
+
+            .inner-padding {
+                padding: 16px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f4f4;">
+    <!-- Full-width background -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f4f4f4;">
+        <tr>
+            <td align="center" style="padding:20px 10px;">
+                <!-- Card -->
+                <table role="presentation" class="wrapper" width="600" cellspacing="0" cellpadding="0" border="0"
+                       style="max-width:600px; width:100%; background-color:#ffffff; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1); overflow:hidden;">
+                    <!-- Header -->
+                    <tr>
+                        <td align="center"
+                            style="padding:20px;
+                                   background:#7A4B78;
+                                   background-image:linear-gradient(to right,#7A4B78,#7A4B78);
+                                   color:#ffffff;
+                                   font-family:Arial,Helvetica,sans-serif;
+                                   font-size:24px;
+                                   font-weight:bold;">
+                            Purchase Order Approved For PO No.: #PurchaseOrderNo#
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td class="inner-padding"
+                            style="padding:20px 24px;
+                                   font-family:Arial,Helvetica,sans-serif;
+                                   color:#555555;
+                                   font-size:14px;
+                                   line-height:1.6;">
+                            <h2 style="margin:0 0 12px 0; font-size:18px; color:#333333; font-weight:bold;">
+                                Dear #SupplierName#,
+                            </h2>
+
+                            <p style="margin:0 0 10px 0;">
+                                The Purchase Order <b>#PurchaseOrderNo#</b> dated <b>#PurchaseOrderDate#</b> has been approved and is attached for your reference.
+                            </p>
+
+                            <p style="margin:0 0 10px 0;">
+                                Kindly review the Purchase Order and proceed with the procurement/supply as per the agreed terms.
+                            </p>
+
+                            <div style="margin:0;">
+                                <div>Thank You,</div>
+                                <div>#ApproverName#</div>
+                                <div>#CompanyName#</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center"
+                            style="padding:10px 20px;
+                                   font-family:Arial,Helvetica,sans-serif;
+                                   font-size:12px;
+                                   color:#777777;">
+                            &copy; #CurrentYear# Inspire Magnetics.
+                        </td>
+                    </tr>
+                </table>
+                <!-- /Card -->
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

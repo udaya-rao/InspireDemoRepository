@@ -1,0 +1,1348 @@
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* Hide Edge's built-in eye icon in password fields */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Chromium-based Edge (new Edge) */
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-textfield-decoration-container,
+input[type="password"]::-webkit-textfield-password-toggle {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.form-check {
+  margin-bottom: 0 !important;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  scrollbar-gutter: auto !important;
+}
+
+/* Ensure no element reserves blank scrollbar gutter space */
+*,
+*::before,
+*::after {
+  scrollbar-gutter: auto;
+}
+
+
+
+/* Light blue focus border & soft glow for form elements, React-Select & password groups */
+.form-control:focus,
+.form-select:focus,
+textarea:focus,
+select:focus,
+.react-select__control:focus-within,
+div[class*="react-select__control"]:focus-within,
+.input-group:focus-within {
+  border-color: #86b7fe !important;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25) !important;
+  outline: none !important;
+}
+
+/* Ensure table pagination controls and buttons never show unwanted border boxes or focus rings */
+.table-pagination-controls,
+.table-pagination-controls:focus,
+.table-pagination-controls:focus-within {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.table-pagination-controls .btn,
+.table-pagination-controls .btn-sm,
+.table-pagination-controls .btn:focus,
+.table-pagination-controls .btn-sm:focus,
+.table-pagination-controls .btn:focus-visible,
+.table-pagination-controls .btn-sm:focus-visible,
+.table-pagination-controls .btn:active,
+.table-pagination-controls .btn-sm:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 50% !important;
+}
+
+/* Prevent inner shadow split on password input groups */
+.input-group:focus-within .form-control,
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .btn {
+  box-shadow: none !important;
+  border-color: #86b7fe !important;
+}
+
+
+
+/* Only allow scrolling in content areas */
+.tab-content-scrollable {
+  flex: 1 1 0%;
+  overflow-y: auto;
+  min-height: 0;
+  background: #fff;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible,
+.nav-link:focus,
+.nav-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.custom-im-button {
+  background-color: rgb(254, 230, 196);
+  color: black;
+}
+
+.custom-im-button:hover {
+  background-color: rgb(254, 230, 196);
+  color: black;
+}
+
+.custom-im-button:disabled {
+  background-color: rgb(254, 230, 196);
+  color: black;
+}
+
+.custom-im-button,
+.custom-im-button:active,
+.custom-im-button:focus,
+.custom-im-button:focus-visible {
+  background-color: rgb(254, 230, 196) !important;
+  color: black !important;
+  border-color: rgb(254, 230, 196) !important;
+  box-shadow: none !important;
+}
+
+
+/* Remove all custom layout and responsive CSS for sidebar and main content. Only Tabler CSS will be used. */
+
+/* Sidebar hover-to-expand styles */
+.sidebar-hover-expand {
+  width: 60px;
+  background-color: rgb(99, 55, 97);
+  color: #fff;
+  transition: width 0.1s;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+}
+
+.sidebar-hover-expand:hover {
+  width: 14rem;
+}
+
+.sidebar-hover-expand .scrollable-nav {
+  overflow-y: auto !important;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+.sidebar-hover-expand .scrollable-nav::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+/* Main menu items - Bold */
+.sidebar-hover-expand .nav-link .nav-link-title {
+  font-weight: 700;
+}
+
+/* Submenu items - Regular */
+.sidebar-hover-expand ul ul .nav-link .nav-link-title {
+  font-weight: 400;
+}
+
+/* Sub-submenu items - Regular */
+.sidebar-hover-expand ul ul ul .nav-link .nav-link-title {
+  font-weight: 400;
+}
+
+/* Add white border-bottom to all submenu items */
+.sidebar-hover-expand ul ul .nav-link {
+  border-bottom: 0.1px solid #ffffff29;
+}
+
+/* Add white border-bottom to all sub-submenu items */
+.sidebar-hover-expand ul ul ul .nav-link {
+  border-bottom: 0.1px solid #ffffff29;
+}
+
+/* Hover effects for menu items */
+.sidebar-hover-expand .nav-link {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-hover-expand .nav-link:hover:not(.disabled) {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Softer hover for nested items */
+.sidebar-hover-expand ul ul .nav-link:hover:not(.disabled) {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Active state stronger than hover */
+.sidebar-hover-expand .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Hover effect on active items - should be more visible than base active state */
+.sidebar-hover-expand .nav-link.active:hover:not(.disabled) {
+  background-color: rgba(255, 255, 255, 0.24) !important;
+}
+
+/* Hover effect on active nested items */
+.sidebar-hover-expand ul ul .nav-link.active:hover:not(.disabled) {
+  background-color: rgba(255, 255, 255, 0.20) !important;
+}
+
+/* Disabled links: no pointer or hover effect */
+.sidebar-hover-expand .nav-link.disabled {
+  cursor: default !important;
+}
+
+.sidebar-hover-expand ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Sidebar Focus & Outline Reset - completely removes blue focus borders/rings across all tabs and items */
+.sidebar-hover-expand,
+.sidebar-hover-expand *,
+.sidebar-hover-expand .nav-link,
+.sidebar-hover-expand a,
+.sidebar-hover-expand div,
+.sidebar-hover-expand li,
+.sidebar-hover-expand button {
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-style: none !important;
+  outline-color: transparent !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidebar-hover-expand .nav-link:focus,
+.sidebar-hover-expand .nav-link:focus-visible,
+.sidebar-hover-expand .nav-link:focus-within,
+.sidebar-hover-expand .nav-link:active,
+.sidebar-hover-expand a:focus,
+.sidebar-hover-expand a:focus-visible,
+.sidebar-hover-expand a:active,
+.sidebar-hover-expand div:focus,
+.sidebar-hover-expand div:focus-visible,
+.sidebar-hover-expand li:focus,
+.sidebar-hover-expand li:focus-visible {
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-style: none !important;
+  outline-color: transparent !important;
+  box-shadow: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.sidebar-hover-expand .nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0 12px 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 16px;
+  transition: background 0.2s;
+  /* border-radius: 0 20px 20px 0; */
+  margin-bottom: 2px;
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.sidebar-hover-expand .nav-link i {
+  margin: 0 18px 0 18px;
+  font-size: 18px;
+  min-width: 11px;
+  text-align: center;
+}
+
+.sidebar-hover-expand .nav-link-title {
+  opacity: 0;
+  transition: opacity 0.3s;
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar-hover-expand:hover .nav-link-title {
+  opacity: 1;
+}
+
+.sidebar-hover-expand .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* Main content offset for sidebar */
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  flex: 1 1 0%;
+  margin-left: 60px;
+  transition: margin-left 0.3s;
+}
+
+.sidebar-hover-expand:hover~.page-wrapper {
+  margin-left: 220px;
+}
+
+.sidebar-logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  margin-top: 8px;
+  position: sticky;
+  /* Changed from relative to sticky */
+  top: 0;
+  /* Stick to the top */
+  height: 40px;
+  background: rgb(99, 55, 97);
+  /* Match sidebar background */
+  z-index: 2;
+  /* Ensure it stays above scrolling content */
+}
+
+.logo-symbol {
+  width: 64px;
+  height: 69px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.logo-full {
+  height: 50px;
+  margin-top: 21px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-hover-expand:hover .logo-full {
+  opacity: 1;
+}
+
+.sidebar-hover-expand:hover .logo-symbol {
+  opacity: 0;
+}
+
+.sidebar-hover-expand.expanded {
+  width: 220px;
+}
+
+.sidebar-hover-expand.expanded .nav-link-title {
+  opacity: 1;
+}
+
+.sidebar-hover-expand.expanded .logo-full {
+  opacity: 1;
+}
+
+.sidebar-hover-expand.expanded .logo-symbol {
+  opacity: 0;
+}
+
+.sidebar-hover-expand.expanded~.page-wrapper {
+  margin-left: 220px;
+}
+
+
+/* --- Validation styling overrides: remove Bootstrap invalid red X icon --- */
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  background-image: none !important;
+  padding-right: .75rem;
+  /* reset to default */
+}
+
+.form-select.is-invalid,
+.was-validated .form-select:invalid {
+  /* keep only the native select caret */
+  background-image: var(--bs-form-select-bg-img) !important;
+}
+
+/* Make input-group addon (eye icon) show invalid border when input is invalid */
+.input-group .form-control.is-invalid+.input-group-text,
+.input-group .form-control.is-invalid~.input-group-text {
+  border-color: var(--bs-form-invalid-border-color, #dc3545) !important;
+  color: var(--bs-form-invalid-color, #dc3545) !important;
+}
+
+/* Remove any background icon from input-group invalid states */
+.input-group .form-control.is-invalid {
+  background-image: none !important;
+}
+
+/* When input is focused, align eye addon with focus state (not red) */
+.input-group .form-control.is-invalid:focus+.input-group-text,
+.input-group .form-control.is-invalid:focus~.input-group-text {
+  border-color: var(--tblr-input-focus-border-color, #86b7fe) !important;
+  color: inherit !important;
+}
+
+/* ================================
+    React-Select Validation Styling
+    ================================ */
+
+/* Invalid state (red border only) */
+.react-select-invalid .react-select__control {
+  border-color: #dc3545 !important;
+  /* Bootstrap danger red */
+  box-shadow: none !important;
+}
+
+/* Valid state (green border only, optional) */
+.react-select-valid .react-select__control {
+  border-color: #198754 !important;
+  /* Bootstrap success green */
+  box-shadow: none !important;
+}
+
+/* Keep hover effect consistent */
+.react-select-invalid .react-select__control:hover {
+  border-color: #dc3545 !important;
+}
+
+.react-select-valid .react-select__control:hover {
+  border-color: #198754 !important;
+}
+
+/* React-Select focus: add Bootstrap glow */
+.react-select__control--is-focused {
+  border-color: #86b7fe !important;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+  /* Bootstrap focus ring */
+}
+
+
+
+/* React-Select: make option highlight only on actual hover, not focus */
+/* Focused option (keyboard / mouse) - no background, only hover shows color */
+.react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* Hover state - only show when actually hovering */
+.react-select__option:hover:not(.react-select__option--is-selected) {
+  background-color: #F2F2F2 !important;
+  color: #222 !important;
+}
+
+/* Selected option */
+.react-select__option--is-selected {
+  background-color: #E0E0E0 !important;
+  color: #222 !important;
+  /* font-weight: 500; */
+}
+
+/* Selected + focused - show selected background even when focused */
+.react-select__option--is-selected.react-select__option--is-focused {
+  background-color: #E0E0E0 !important;
+  color: #222 !important;
+}
+
+/* Hover on selected item */
+.react-select__option--is-selected:hover {
+  background-color: #D0D0D0 !important;
+  color: #222 !important;
+}
+
+/* Active (mouse click feedback) */
+.react-select__option:active {
+  background-color: #C8C8C8 !important;
+  color: #111 !important;
+}
+
+
+
+/* React Select - global compact menu + sizing */
+.react-select__menu-portal {
+  z-index: 99999 !important;
+}
+
+.react-select__menu {
+  z-index: 99999 !important;
+}
+
+.react-select__menu-list {
+  max-height: 180px;
+}
+
+.react-select__option {
+  padding: 2px 8px;
+  min-height: 24px;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   GLOBAL COMPACT FORM FIELDS & LABELS OVERRIDES (All Screens - 28px Height)
+   ========================================================================== */
+
+/* 1. Standard Input Fields (excluding textareas and search bars) */
+.form-control:not(textarea):not([placeholder^="Search"]):not([type="search"]) {
+  padding: 0px 8px !important;
+  font-size: 13px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  line-height: 28px !important;
+}
+
+/* 2. Standard Select Dropdowns (native) */
+.form-select {
+  padding: 0px 1.75rem 0px 8px !important;
+  font-size: 13px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  line-height: 28px !important;
+}
+
+/* 3. Form Group Row Spacing */
+div.mb-2 {
+  margin-bottom: 4px !important;
+}
+
+div.mb-3 {
+  margin-bottom: 6px !important;
+}
+
+/* Eliminate double-margins for rows containing form fields */
+.row.mb-1:has(.form-control, .form-select, div[class*="-control"], .form-check-input),
+.row.mb-2:has(.form-control, .form-select, div[class*="-control"], .form-check-input),
+.row.mb-3:has(.form-control, .form-select, div[class*="-control"], .form-check-input),
+.row.mb-4:has(.form-control, .form-select, div[class*="-control"], .form-check-input),
+.row.mb-5:has(.form-control, .form-select, div[class*="-control"], .form-check-input) {
+  margin-bottom: 0px !important;
+}
+
+/* 4. React Select (Dropdowns like Customer Type, Status, etc.) */
+.react-select__control,
+div[class*="-control"] {
+  min-height: 28px !important;
+  height: 28px !important;
+  font-size: 13px !important;
+}
+
+.react-select__control--is-focused {
+  min-height: 28px !important;
+  height: 28px !important;
+}
+
+.react-select__value-container,
+div[class*="-ValueContainer"] {
+  padding: 0px 6px !important;
+  height: 26px !important;
+}
+
+.react-select__indicators,
+div[class*="-IndicatorsContainer"] {
+  padding: 0 4px !important;
+  height: 26px !important;
+}
+
+.react-select__indicator-separator {
+  display: none !important;
+}
+
+/* Center option list items in dropdown menu lists */
+.react-select__option,
+div[class*="-option"] {
+  text-align: left !important;
+}
+
+.react-select__input-container,
+div[class*="-Input"] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure placeholder and selected values are compact */
+.react-select__placeholder,
+div[class*="-placeholder"],
+.react-select__single-value,
+div[class*="-singleValue"] {
+  font-size: 13px !important;
+}
+
+/* Adjust dropdown arrow and clear button padding */
+.react-select__indicator,
+.react-select__dropdown-indicator,
+.react-select__clear-indicator {
+  padding: 2px !important;
+}
+
+/* 5. Input Groups & Input Group Addons (Password Fields, etc.) */
+.input-group {
+  height: 28px !important;
+  min-height: 28px !important;
+}
+
+.input-group-text {
+  padding: 0px 8px !important;
+  font-size: 13px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  line-height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+
+
+/* ==========================================================================
+   TABLET & TOUCH RESPONSIVE OVERRIDES
+
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+  /* ── TopNavbar: Hide hamburger/pin-sidebar toggle button on tablet ── */
+  .sidebar-pin-toggle-btn {
+    display: none !important;
+  }
+
+  /* ── Sidebar: Remains slim icon-only (60px) on tablet ── */
+  .sidebar-hover-expand {
+    width: 60px !important;
+    z-index: 10050 !important;
+    transition: none !important;
+  }
+
+  .sidebar-hover-expand:hover {
+    width: 60px !important;
+  }
+
+  .sidebar-hover-expand .nav-link-title,
+  .sidebar-hover-expand:hover .nav-link-title {
+    opacity: 0 !important;
+    display: none !important;
+  }
+
+  .sidebar-logo {
+    width: 60px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    background: transparent !important;
+  }
+
+  .sidebar-hover-expand .logo-symbol,
+  .sidebar-hover-expand:hover .logo-symbol {
+    position: static !important;
+    transform: none !important;
+    width: 36px !important;
+    height: 36px !important;
+    object-fit: contain !important;
+    display: block !important;
+    opacity: 1 !important;
+    margin: auto !important;
+  }
+
+  .sidebar-hover-expand .logo-full,
+  .sidebar-hover-expand:hover .logo-full {
+    opacity: 0 !important;
+    display: none !important;
+  }
+
+  /* Page wrapper always has 60px left margin on tablet */
+  .sidebar-hover-expand~.page-wrapper,
+  .sidebar-hover-expand:hover~.page-wrapper,
+  .sidebar-hover-expand.expanded~.page-wrapper {
+    margin-left: 60px !important;
+  }
+
+  /* ── Tablet Flyout Submenu Card ── */
+  .sidebar-tablet-flyout {
+    background-color: rgb(99, 55, 97) !important;
+    animation: sidebarFlyoutFadeIn 0.15s ease-out;
+    pointer-events: auto !important;
+    z-index: 100000 !important;
+  }
+
+  /* Invisible hover bridge connecting 60px sidebar and flyout so hover never drops */
+  .sidebar-tablet-flyout::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -20px;
+    width: 25px;
+    background: transparent;
+  }
+
+  @keyframes sidebarFlyoutFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .sidebar-flyout-item:hover:not(.disabled) {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    padding-left: 22px !important;
+  }
+
+  .nav-link.flyout-active {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+  }
+
+  /* ── Table Header Toolbar: Responsive across all screens without merging ── */
+  .table-header-toolbar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    row-gap: 8px !important;
+  }
+
+  .table-title-section {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .table-title-section h1 {
+    font-size: 15px !important;
+    white-space: nowrap !important;
+  }
+
+  .table-filter-search-section,
+  .table-search-pagination-section {
+    margin-right: 4px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+    min-width: 0 !important;
+  }
+
+  .table-filter-search-section input[placeholder^="Search"],
+  .table-search-pagination-section input[placeholder^="Search"] {
+    min-width: 70px !important;
+    max-width: 130px !important;
+    width: 100px !important;
+    height: 28px !important;
+    min-height: 28px !important;
+    font-size: 13px !important;
+    padding-left: 26px !important;
+    padding-right: 4px !important;
+  }
+
+  /* Custom filters (Item Code, Dates, Generate Report) */
+  .table-custom-filters {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    row-gap: 6px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .table-custom-filters .filter-item-code-group,
+  .table-custom-filters .filter-date-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .table-custom-filters label {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    margin-bottom: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .table-custom-filters input[type="date"] {
+    height: 30px !important;
+    min-height: 30px !important;
+    width: 128px !important;
+    min-width: 125px !important;
+    padding: 2px 4px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .table-pagination-controls {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    gap: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .table-pagination-controls .btn,
+  .table-pagination-controls .btn-sm {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 50% !important;
+  }
+
+  .table-pagination-controls .btn:focus,
+  .table-pagination-controls .btn-sm:focus,
+  .table-pagination-controls .btn:focus-visible,
+  .table-pagination-controls .btn-sm:focus-visible,
+  .table-pagination-controls .btn:active,
+  .table-pagination-controls .btn-sm:active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .table-pagination-controls .btn-sm svg {
+    font-size: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .table-pagination-controls span {
+    font-size: 12px !important;
+    margin: 0 2px !important;
+  }
+
+  .table-pagination-controls input {
+    width: 28px !important;
+    height: 26px !important;
+    font-size: 12px !important;
+    margin: 0 2px !important;
+    padding: 0 2px !important;
+  }
+
+  .table-actions-section {
+    gap: 4px !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .table-header-toolbar:not(.has-custom-filters) .table-filter-search-section,
+  .table-header-toolbar:not(.has-custom-filters) .table-search-pagination-section {
+    margin-left: auto !important;
+    margin-right: 4px !important;
+    justify-content: flex-end !important;
+  }
+
+  .table-header-toolbar:not(.has-custom-filters) .table-actions-section {
+    margin-left: 0 !important;
+  }
+
+  .table-actions-section .dropdown .btn {
+    height: 28px !important;
+    min-height: 28px !important;
+    padding: 2px 6px !important;
+    font-size: 12px !important;
+    line-height: 24px !important;
+  }
+
+  .table-actions-section .btn-sm:not(.table-pagination-controls .btn-sm) {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    padding: 0 !important;
+    border-radius: 6px !important;
+  }
+
+  .table-actions-section .btn-sm svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* ── Filter-Heavy Tables (Transaction History, Current Stock, etc.):
+      ── */
+  .table-header-toolbar.has-custom-filters {
+    flex-wrap: wrap !important;
+    row-gap: 8px !important;
+  }
+
+  .table-header-toolbar.has-custom-filters .table-title-section {
+    order: 1 !important;
+  }
+
+  .table-header-toolbar.has-custom-filters .table-actions-section {
+    order: 2 !important;
+    margin-left: auto !important;
+  }
+
+  .table-header-toolbar.has-custom-filters .table-filter-search-section,
+  .table-header-toolbar.has-custom-filters .table-search-pagination-section {
+    order: 3 !important;
+    width: 100% !important;
+    flex-basis: 100% !important;
+    margin-top: 4px !important;
+    padding-top: 6px !important;
+    border-top: 1px solid #f1f5f9 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* ── Standard Master Tables on Tablet (769px - 1024px):
+     Keep Title on left, and Search, Filter, Pagination, and Action buttons right-aligned in a single line ── */
+  .table-header-toolbar:not(.has-custom-filters) {
+    flex-wrap: nowrap !important;
+    row-gap: 0 !important;
+  }
+
+  .table-header-toolbar:not(.has-custom-filters) .table-title-section {
+    flex-shrink: 0 !important;
+  }
+
+  .table-header-toolbar:not(.has-custom-filters) .table-filter-search-section,
+  .table-header-toolbar:not(.has-custom-filters) .table-search-pagination-section {
+    margin-left: auto !important;
+    margin-right: 8px !important;
+    flex-grow: 0 !important;
+    justify-content: flex-end !important;
+  }
+
+  .table-header-toolbar:not(.has-custom-filters) .table-actions-section {
+    margin-left: 0 !important;
+  }
+
+  /* ── Form fields: increase touch targets on tablet ── */
+  .form-control:not(textarea):not([placeholder^="Search"]):not([type="search"]) {
+    height: 34px !important;
+    min-height: 34px !important;
+    line-height: 34px !important;
+  }
+
+  .form-select {
+    height: 34px !important;
+    min-height: 34px !important;
+    line-height: 34px !important;
+  }
+
+  .react-select__control,
+  div[class*="-control"] {
+    min-height: 34px !important;
+    height: 34px !important;
+  }
+
+  .react-select__control--is-focused {
+    min-height: 34px !important;
+    height: 34px !important;
+  }
+
+  .react-select__value-container,
+  div[class*="-ValueContainer"] {
+    height: 32px !important;
+  }
+
+  .react-select__indicators,
+  div[class*="-IndicatorsContainer"] {
+    height: 32px !important;
+  }
+
+  .input-group {
+    height: 34px !important;
+    min-height: 34px !important;
+  }
+
+  .input-group-text {
+    height: 34px !important;
+    min-height: 34px !important;
+    line-height: 34px !important;
+  }
+
+  /* ── Navbar search bar: fluid width instead of fixed 260px ── */
+  .quick-page-search {
+    width: 100% !important;
+    min-width: 120px !important;
+    max-width: 260px !important;
+  }
+
+  /* ── Tab bar: top tab navbar container and horizontal touch-scrolling on tablet ── */
+  .tab-navbar-container,
+  [role="tablist"].navbar {
+    min-height: 44px !important;
+    height: auto !important;
+    padding-bottom: 2px !important;
+    align-items: stretch !important;
+  }
+
+  .tab-scrollbar {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+    /* scrollbar-color: #c1c1c1 transparent !important; */
+    padding-bottom: 3px !important;
+  }
+
+  /* ── Tablet View: Dedicated Vertical & Horizontal Scrollbars for Overview & Details Screens ── */
+  /* 1. Ensure smooth touch scrolling with momentum and bidirectional overflow */
+  .table-responsive,
+  .table-container,
+  #table-default,
+  .hsn-table-wrapper,
+  .gst-table-wrapper,
+  .tab-content-scrollable,
+  [class*="-table-responsive"] {
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+    /* scrollbar-color: #c1c1c1 transparent !important; */
+  }
+
+  .offcanvas-body,
+  .right-drawer-body,
+  .drawer-body,
+  .modal-body,
+  .draggable-modal-body {
+    overflow-y: auto !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+    /* scrollbar-color: #c1c1c1 transparent !important; */
+  }
+
+  /* 2. Custom WebKit visible scrollbars on tablet view for touch & mouse */
+  .table-responsive::-webkit-scrollbar,
+  .table-container::-webkit-scrollbar,
+  #table-default::-webkit-scrollbar,
+  .hsn-table-wrapper::-webkit-scrollbar,
+  .gst-table-wrapper::-webkit-scrollbar,
+  .tab-content-scrollable::-webkit-scrollbar,
+  .tab-scrollbar::-webkit-scrollbar,
+  main::-webkit-scrollbar,
+  .offcanvas-body::-webkit-scrollbar,
+  .right-drawer-body::-webkit-scrollbar,
+  .drawer-body::-webkit-scrollbar,
+  .modal-body::-webkit-scrollbar,
+  .draggable-modal-body::-webkit-scrollbar,
+  .contact-details-table-responsive::-webkit-scrollbar,
+  [class*="-table-responsive"]::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+    display: block !important;
+    -webkit-appearance: none !important;
+  }
+
+  .table-responsive::-webkit-scrollbar-track,
+  .table-container::-webkit-scrollbar-track,
+  #table-default::-webkit-scrollbar-track,
+  .hsn-table-wrapper::-webkit-scrollbar-track,
+  .gst-table-wrapper::-webkit-scrollbar-track,
+  .tab-content-scrollable::-webkit-scrollbar-track,
+  .tab-scrollbar::-webkit-scrollbar-track,
+  main::-webkit-scrollbar-track,
+  .offcanvas-body::-webkit-scrollbar-track,
+  .right-drawer-body::-webkit-scrollbar-track,
+  .drawer-body::-webkit-scrollbar-track,
+  .modal-body::-webkit-scrollbar-track,
+  .draggable-modal-body::-webkit-scrollbar-track,
+  .contact-details-table-responsive::-webkit-scrollbar-track,
+  [class*="-table-responsive"]::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 6px !important;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb,
+  .table-container::-webkit-scrollbar-thumb,
+  #table-default::-webkit-scrollbar-thumb,
+  .hsn-table-wrapper::-webkit-scrollbar-thumb,
+  .gst-table-wrapper::-webkit-scrollbar-thumb,
+  .tab-content-scrollable::-webkit-scrollbar-thumb,
+  .tab-scrollbar::-webkit-scrollbar-thumb,
+  main::-webkit-scrollbar-thumb,
+  .offcanvas-body::-webkit-scrollbar-thumb,
+  .right-drawer-body::-webkit-scrollbar-thumb,
+  .drawer-body::-webkit-scrollbar-thumb,
+  .modal-body::-webkit-scrollbar-thumb,
+  .draggable-modal-body::-webkit-scrollbar-thumb,
+  .contact-details-table-responsive::-webkit-scrollbar-thumb,
+  [class*="-table-responsive"]::-webkit-scrollbar-thumb {
+    background: #c1c1c1 !important;
+    border-radius: 6px !important;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb:hover,
+  .table-responsive::-webkit-scrollbar-thumb:active,
+  .table-container::-webkit-scrollbar-thumb:hover,
+  .table-container::-webkit-scrollbar-thumb:active,
+  #table-default::-webkit-scrollbar-thumb:hover,
+  #table-default::-webkit-scrollbar-thumb:active,
+  .hsn-table-wrapper::-webkit-scrollbar-thumb:hover,
+  .hsn-table-wrapper::-webkit-scrollbar-thumb:active,
+  .gst-table-wrapper::-webkit-scrollbar-thumb:hover,
+  .gst-table-wrapper::-webkit-scrollbar-thumb:active,
+  .tab-content-scrollable::-webkit-scrollbar-thumb:hover,
+  .tab-content-scrollable::-webkit-scrollbar-thumb:active,
+  main::-webkit-scrollbar-thumb:hover,
+  main::-webkit-scrollbar-thumb:active,
+  .offcanvas-body::-webkit-scrollbar-thumb:hover,
+  .offcanvas-body::-webkit-scrollbar-thumb:active,
+  .right-drawer-body::-webkit-scrollbar-thumb:hover,
+  .right-drawer-body::-webkit-scrollbar-thumb:active,
+  .drawer-body::-webkit-scrollbar-thumb:hover,
+  .drawer-body::-webkit-scrollbar-thumb:active,
+  .modal-body::-webkit-scrollbar-thumb:hover,
+  .modal-body::-webkit-scrollbar-thumb:active,
+  .draggable-modal-body::-webkit-scrollbar-thumb:hover,
+  .draggable-modal-body::-webkit-scrollbar-thumb:active,
+  .contact-details-table-responsive::-webkit-scrollbar-thumb:hover,
+  .contact-details-table-responsive::-webkit-scrollbar-thumb:active,
+  [class*="-table-responsive"]::-webkit-scrollbar-thumb:hover,
+  [class*="-table-responsive"]::-webkit-scrollbar-thumb:active {
+    background: #a8a8a8 !important;
+  }
+
+  /* Tab navbar scrollbar hover: previous color (#a5b1c2) from reference */
+  .tab-scrollbar::-webkit-scrollbar-thumb:hover,
+  .tab-scrollbar::-webkit-scrollbar-thumb:active {
+    background: #666666 !important;
+  }
+
+  .table-responsive::-webkit-scrollbar-corner,
+  .table-container::-webkit-scrollbar-corner,
+  #table-default::-webkit-scrollbar-corner,
+  .tab-scrollbar::-webkit-scrollbar-corner,
+  .offcanvas-body::-webkit-scrollbar-corner,
+  .right-drawer-body::-webkit-scrollbar-corner,
+  .drawer-body::-webkit-scrollbar-corner,
+  .modal-body::-webkit-scrollbar-corner,
+  [class*="-table-responsive"]::-webkit-scrollbar-corner {
+    background: transparent !important;
+  }
+
+  /* Preserve dropdown hiding behaviour when dropdown is open */
+  .table-responsive.dropdown-open::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .table-responsive.dropdown-open {
+    scrollbar-width: none !important;
+  }
+}
+
+
+/* ── Smaller tablets / large phones (≤ 768px) ── */
+@media (max-width: 768px) {
+
+  /* Full-width search bar on small tablets */
+  .quick-page-search {
+    max-width: 180px !important;
+  }
+
+  /* Stack form columns on small tablets */
+  .col-md-2,
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: 50% !important;
+  }
+
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 50% !important;
+  }
+
+  /* Table Header Toolbar: clean stacking on small screens */
+  .table-header-toolbar {
+    flex-wrap: wrap !important;
+    row-gap: 6px !important;
+  }
+
+  .table-header-toolbar .table-title-section {
+    order: 1 !important;
+  }
+
+  .table-header-toolbar .table-actions-section {
+    order: 2 !important;
+    margin-left: auto !important;
+  }
+
+  .table-header-toolbar .table-filter-search-section,
+  .table-header-toolbar .table-search-pagination-section {
+    order: 3 !important;
+    width: 100% !important;
+    flex-basis: 100% !important;
+    margin-top: 4px !important;
+    justify-content: flex-start !important;
+  }
+
+  .table-header-toolbar .table-filter-search-section input[placeholder^="Search"],
+  .table-header-toolbar .table-search-pagination-section input[placeholder^="Search"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .table-custom-filters {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+}
+
+/* ── Mobile phones (≤ 520px) ── */
+@media (max-width: 520px) {
+  .table-header-toolbar .table-title-section {
+    width: 100% !important;
+    margin-bottom: 2px !important;
+  }
+
+  .table-header-toolbar .table-actions-section {
+    width: 100% !important;
+    justify-content: space-between !important;
+    margin-left: 0 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .table-custom-filters .filter-item-code-group {
+    width: 100% !important;
+  }
+
+  .table-custom-filters .filter-item-code-group>div {
+    flex-grow: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── Filter-Heavy Tables on Laptops / Split-Screen (≤ 1200px) ── */
+@media (max-width: 1200px) {
+  .table-header-toolbar.has-custom-filters {
+    flex-wrap: wrap !important;
+    row-gap: 8px !important;
+  }
+
+  .table-header-toolbar.has-custom-filters .table-title-section {
+    order: 1 !important;
+  }
+
+  .table-header-toolbar.has-custom-filters .table-actions-section {
+    order: 2 !important;
+    margin-left: auto !important;
+  }
+
+  .table-header-toolbar.has-custom-filters .table-filter-search-section,
+  .table-header-toolbar.has-custom-filters .table-search-pagination-section {
+    order: 3 !important;
+    width: 100% !important;
+    flex-basis: 100% !important;
+    margin-top: 4px !important;
+    padding-top: 6px !important;
+    border-top: 1px solid #f1f5f9 !important;
+    justify-content: flex-start !important;
+  }
+}

@@ -1,0 +1,678 @@
+/* ==========================================================================
+   CurrentStock.css
+   Styles for Current Stock screen (Normal Screen & Print Report)
+   Completely isolated to prevent style conflicts with Transaction History
+   ========================================================================== */
+
+/* ==================== NORMAL SCREEN STYLES ==================== */
+
+.current-stock-wrapper table tbody tr {
+  height: 32px !important;
+}
+
+.current-stock-wrapper table tbody tr td {
+  vertical-align: middle !important;
+}
+
+.current-stock-wrapper table th:first-child,
+.current-stock-wrapper table td:first-child,
+.current-stock-wrapper table th.fixed-first-column,
+.current-stock-wrapper table td.fixed-first-column {
+  width: 42px !important;
+  min-width: 42px !important;
+  max-width: 42px !important;
+  padding: 0 2px !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+.current-stock-wrapper .expand-all-header-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row {
+  height: 32px !important;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row td,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row td {
+  padding: 0.1rem 0.5rem !important;
+  height: 32px !important;
+  vertical-align: middle !important;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row td:first-child,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row td:first-child {
+  background-color: #f8fafc !important;
+  border-right: 1px solid #dee2e6 !important;
+  transition: background-color 0.15s ease;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row:hover td,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row:hover td {
+  background-color: #f1f5f9 !important;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row:hover td:first-child,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row:hover td:first-child {
+  background-color: #f1f5f9 !important;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row.selected,
+.current-stock-wrapper .table tbody tr.sub-item-row.selected td,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row.selected,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row.selected td {
+  background-color: #e3f2fd !important;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row.selected td:first-child,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row.selected td:first-child {
+  border-left: 1px solid #1677ff !important;
+}
+
+.current-stock-wrapper .table tbody tr.selected td:first-child {
+  border-left: 1px solid #1677ff !important;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row.selected:hover td,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row.selected:hover td {
+  background-color: #dbeafe !important;
+}
+
+.current-stock-wrapper .table tbody tr.sub-item-row.selected:hover td:first-child,
+.current-stock-wrapper .table tbody tr.cs-sub-item-row.selected:hover td:first-child {
+  background-color: #dbeafe !important;
+}
+
+.current-stock-wrapper .mb-2 {
+  margin-bottom: 0 !important;
+}
+
+/* Printable Header hidden during normal screen display */
+.cs-print-only-header,
+.current-stock-wrapper .print-only-header {
+  display: none;
+}
+
+/* Floating Print Bar Button Styles */
+.cs-floating-print-bar {
+  bottom: 42px !important;
+}
+
+.cs-floating-print-bar button {
+  background-color: transparent !important;
+}
+
+.cs-floating-print-bar button:hover {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.cs-floating-print-bar button:focus,
+.cs-floating-print-bar button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.cs-floating-print-bar button:focus:hover {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* ── Full Height & Responsive Layout for Current Stock ── */
+.current-stock-wrapper {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.current-stock-wrapper main {
+  flex: 1 1 0% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.current-stock-wrapper main>div:last-child {
+  flex: 1 1 0% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+.current-stock-wrapper .card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+.current-stock-wrapper .card-body {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+}
+
+.current-stock-wrapper #table-default {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+}
+
+/* Tablet & Desktop Header Toolbar for Current Stock: single-line layout (≥ 768px) */
+@media (min-width: 768px) {
+  .current-stock-wrapper .table-header-toolbar.has-custom-filters {
+    flex-wrap: nowrap !important;
+    row-gap: 0 !important;
+  }
+
+  .current-stock-wrapper .table-header-toolbar.has-custom-filters .table-title-section {
+    order: 1 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .current-stock-wrapper .table-header-toolbar.has-custom-filters .table-filter-search-section,
+  .current-stock-wrapper .table-header-toolbar.has-custom-filters .table-search-pagination-section {
+    order: 2 !important;
+    width: auto !important;
+    flex-basis: auto !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    margin-left: auto !important;
+    margin-right: 8px !important;
+    justify-content: flex-end !important;
+  }
+
+  .current-stock-wrapper .table-header-toolbar.has-custom-filters .table-actions-section {
+    order: 3 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  /* Hide application UI elements */
+  aside,
+  .sidebar-hover-expand,
+  header,
+  nav,
+  .sidebar,
+  .btn,
+  button,
+  .no-print,
+  .d-print-none,
+  .dropdown,
+  .card-header,
+  .navbar,
+  .page-header,
+  [role="tablist"],
+  .tab-scrollbar,
+  .table-actions-section,
+  .table-pagination-controls,
+  #tab-global-minibar,
+  .global-minibar,
+  footer,
+  .footer,
+  #app-splash,
+  [class*="minibar"],
+  [id*="minibar"] {
+    display: none !important;
+  }
+
+  /* Hide all inactive tabs and any unrelated views */
+  .tab-content-scrollable>div[style*="display: none"],
+  .tab-content-scrollable>div[style*="display:none"] {
+    display: none !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  /* Reset layout containers for Current Stock */
+  .page,
+  .page-wrapper,
+  .page-wrapper>div,
+  .tab-content-scrollable,
+  .tab-content-scrollable>div,
+  .current-stock-wrapper,
+  .current-stock-wrapper main,
+  .current-stock-wrapper main>div,
+  .current-stock-wrapper [class*="table-instance-"],
+  .current-stock-wrapper .card,
+  .current-stock-wrapper .card.h-100,
+  .current-stock-wrapper .h-100,
+  .current-stock-wrapper .card-body,
+  .current-stock-wrapper #table-default,
+  .current-stock-wrapper .table-responsive {
+    position: static !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    float: none !important;
+    flex: none !important;
+  }
+
+  .cs-print-only-header {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .cs-print-only-header h2 {
+    margin: 0 0 2px 0 !important;
+    font-size: 15pt !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    color: #000000 !important;
+  }
+
+  .cs-print-only-header h4 {
+    margin: 0 0 4px 0 !important;
+    font-size: 11pt !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    color: #000000 !important;
+  }
+
+  .cs-print-only-header table.cs-print-header-table,
+  .cs-print-only-header table.print-header-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    border: 1px solid #000000 !important;
+    margin: 4px 0 0 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .cs-print-only-header table.cs-print-header-table td,
+  .cs-print-only-header table.print-header-table td {
+    border: 1px solid #000000 !important;
+    padding: 3px 6px !important;
+    font-size: 7.5pt !important;
+    color: #000000 !important;
+  }
+
+  /* ==================== MAIN TABLE ==================== */
+
+  .current-stock-wrapper table,
+  .current-stock-wrapper .table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    border: 1px solid #000000 !important;
+    font-size: 7.5pt !important;
+    color: #000000 !important;
+    margin: 4px 0 0 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  /* Reset min-width and max-width so inline styles from DST do not break A4 print */
+  .current-stock-wrapper table:not(.print-header-table) th,
+  .current-stock-wrapper table:not(.print-header-table) td,
+  .current-stock-wrapper .table:not(.print-header-table) th,
+  .current-stock-wrapper .table:not(.print-header-table) td {
+    min-width: 0 !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+  }
+
+  /* Hide 1st column: Action / Expand button (MAIN table only) */
+  .current-stock-wrapper table:not(.print-header-table) th:first-child,
+  .current-stock-wrapper table:not(.print-header-table) td:first-child,
+  .current-stock-wrapper .table:not(.print-header-table) th:first-child,
+  .current-stock-wrapper .table:not(.print-header-table) td:first-child {
+    display: none !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  .current-stock-wrapper .fixed-first-column {
+    position: static !important;
+    left: auto !important;
+    z-index: auto !important;
+  }
+
+  /* 6 Visible Column Widths on Table Header (nth-child(1) is the hidden Action column)
+     Total: 14% (Item Code) + 36% (Description/Batch Details) + 14% (Current Stock) + 8% (Unit) + 14% (WIP Stock) + 14% (Re-Order Qty) = 100% */
+  /* Col 2: Item Code */
+  .current-stock-wrapper table:not(.print-header-table) th:nth-child(2),
+  .current-stock-wrapper .table:not(.print-header-table) th:nth-child(2) {
+    width: 14% !important;
+    text-align: left !important;
+  }
+
+  /* Col 3: Item Description / Batch Details */
+  .current-stock-wrapper table:not(.print-header-table) th:nth-child(3),
+  .current-stock-wrapper .table:not(.print-header-table) th:nth-child(3) {
+    width: 36% !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Col 4: Current Stock */
+  .current-stock-wrapper table:not(.print-header-table) th:nth-child(4),
+  .current-stock-wrapper .table:not(.print-header-table) th:nth-child(4) {
+    width: 14% !important;
+    text-align: right !important;
+  }
+
+  /* Col 5: Unit */
+  .current-stock-wrapper table:not(.print-header-table) th:nth-child(5),
+  .current-stock-wrapper .table:not(.print-header-table) th:nth-child(5) {
+    width: 8% !important;
+    text-align: center !important;
+  }
+
+  /* Col 6: WIP Stock */
+  .current-stock-wrapper table:not(.print-header-table) th:nth-child(6),
+  .current-stock-wrapper .table:not(.print-header-table) th:nth-child(6) {
+    width: 14% !important;
+    text-align: right !important;
+  }
+
+  /* Col 7: Re-Order Qty */
+  .current-stock-wrapper table:not(.print-header-table) th:nth-child(7),
+  .current-stock-wrapper .table:not(.print-header-table) th:nth-child(7) {
+    width: 14% !important;
+    text-align: right !important;
+  }
+
+  /* Sub-row cell widths & alignments (sub-rows have all 7 individual columns) */
+  .current-stock-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(2),
+  .current-stock-wrapper table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(2),
+  .current-stock-wrapper .table:not(.print-header-table) tr.sub-item-row td:nth-child(2),
+  .current-stock-wrapper .table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(2) {
+    width: 14% !important;
+    text-align: left !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(3),
+  .current-stock-wrapper table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(3),
+  .current-stock-wrapper .table:not(.print-header-table) tr.sub-item-row td:nth-child(3),
+  .current-stock-wrapper .table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(3) {
+    width: 36% !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(4),
+  .current-stock-wrapper table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(4),
+  .current-stock-wrapper .table:not(.print-header-table) tr.sub-item-row td:nth-child(4),
+  .current-stock-wrapper .table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(4) {
+    width: 14% !important;
+    text-align: right !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(5),
+  .current-stock-wrapper table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(5),
+  .current-stock-wrapper .table:not(.print-header-table) tr.sub-item-row td:nth-child(5),
+  .current-stock-wrapper .table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(5) {
+    width: 8% !important;
+    text-align: center !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(6),
+  .current-stock-wrapper table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(6),
+  .current-stock-wrapper .table:not(.print-header-table) tr.sub-item-row td:nth-child(6),
+  .current-stock-wrapper .table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(6) {
+    width: 14% !important;
+    text-align: right !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(7),
+  .current-stock-wrapper table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(7),
+  .current-stock-wrapper .table:not(.print-header-table) tr.sub-item-row td:nth-child(7),
+  .current-stock-wrapper .table:not(.print-header-table) tr.cs-sub-item-row td:nth-child(7) {
+    width: 14% !important;
+    text-align: right !important;
+  }
+
+  /* Parent group row cell alignments (Item Code & Description merged across 2 columns with colspan="2") */
+  .current-stock-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td[colspan="2"],
+  .current-stock-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(2),
+  .current-stock-wrapper .table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td[colspan="2"],
+  .current-stock-wrapper .table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(2) {
+    text-align: left !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(3),
+  .current-stock-wrapper .table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(3) {
+    width: 14% !important;
+    text-align: right !important;
+    font-weight: normal !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(4),
+  .current-stock-wrapper .table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(4) {
+    width: 8% !important;
+    text-align: center !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(5),
+  .current-stock-wrapper .table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(5) {
+    width: 14% !important;
+    text-align: right !important;
+  }
+
+  .current-stock-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(6),
+  .current-stock-wrapper .table:not(.print-header-table) tr:not(.sub-item-row):not(.cs-sub-item-row) td:nth-child(6) {
+    width: 14% !important;
+    text-align: right !important;
+  }
+
+  /* Table Header */
+  .current-stock-wrapper table thead,
+  .current-stock-wrapper .table thead {
+    display: table-header-group !important;
+    position: static !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+
+  .current-stock-wrapper table thead tr,
+  .current-stock-wrapper .table thead tr {
+    position: static !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    border-top: 1px solid #000000 !important;
+    border-bottom: 1px solid #000000 !important;
+    width: 100% !important;
+  }
+
+  .current-stock-wrapper table th,
+  .current-stock-wrapper .table th,
+  .current-stock-wrapper table thead th,
+  .current-stock-wrapper .table thead th,
+  .current-stock-wrapper table thead th+th,
+  .current-stock-wrapper .table thead th+th,
+  .current-stock-wrapper table thead th.actions-column,
+  .current-stock-wrapper table thead th.fixed-first-column {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+    border-top: 1px solid #000000 !important;
+    border-bottom: 1px solid #000000 !important;
+    border-left: 1px solid #000000 !important;
+    border-right: 1px solid #000000 !important;
+    border-color: #000000 !important;
+    font-size: 7.5pt !important;
+    font-weight: bold !important;
+    padding: 4px 3px !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    position: static !important;
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .current-stock-wrapper table th span,
+  .current-stock-wrapper table th button {
+    color: #000000 !important;
+    font-size: 7.5pt !important;
+    font-weight: bold !important;
+    white-space: normal !important;
+    display: inline !important;
+    text-align: inherit !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Table Body */
+  .current-stock-wrapper table tbody,
+  .current-stock-wrapper .table tbody {
+    display: table-row-group !important;
+  }
+
+  /* Grouped parent rows & Child sub-item rows: EXACT SAME HEIGHT in Report popup */
+  .current-stock-wrapper .table tbody tr,
+  .current-stock-wrapper table tbody tr,
+  .current-stock-wrapper table tr,
+  .current-stock-wrapper table tr.selected,
+  .current-stock-wrapper .table tbody tr.sub-item-row,
+  .current-stock-wrapper .table tbody tr.sub-item-row.selected,
+  .current-stock-wrapper .table tbody tr.cs-sub-item-row,
+  .current-stock-wrapper .table tbody tr.cs-sub-item-row.selected,
+  .current-stock-wrapper table tr.sub-item-row,
+  .current-stock-wrapper table tr.sub-item-row.selected,
+  .current-stock-wrapper table tr.cs-sub-item-row,
+  .current-stock-wrapper table tr.cs-sub-item-row.selected,
+  .current-stock-wrapper tr.sub-item-row,
+  .current-stock-wrapper tr.sub-item-row.selected,
+  .current-stock-wrapper tr.cs-sub-item-row,
+  .current-stock-wrapper tr.cs-sub-item-row.selected {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    background-color: transparent !important;
+    border: none !important;
+    position: static !important;
+  }
+
+  .current-stock-wrapper .table tbody tr td,
+  .current-stock-wrapper table tbody tr td,
+  .current-stock-wrapper table td,
+  .current-stock-wrapper .table tbody tr.sub-item-row td,
+  .current-stock-wrapper .table tbody tr.sub-item-row.selected td,
+  .current-stock-wrapper .table tbody tr.cs-sub-item-row td,
+  .current-stock-wrapper .table tbody tr.cs-sub-item-row.selected td,
+  .current-stock-wrapper table tr.sub-item-row td,
+  .current-stock-wrapper table tr.sub-item-row.selected td,
+  .current-stock-wrapper table tr.cs-sub-item-row td,
+  .current-stock-wrapper table tr.cs-sub-item-row.selected td,
+  .current-stock-wrapper tr.sub-item-row td,
+  .current-stock-wrapper tr.sub-item-row.selected td,
+  .current-stock-wrapper tr.cs-sub-item-row td,
+  .current-stock-wrapper tr.cs-sub-item-row.selected td {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    border: 1px solid #000000 !important;
+    padding: 2.5px 3px !important;
+    color: #000000 !important;
+    font-size: 7.5pt !important;
+    line-height: 1.15 !important;
+    vertical-align: middle !important;
+    position: static !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Sub-item child rows background */
+  .current-stock-wrapper .table tbody tr.sub-item-row td,
+  .current-stock-wrapper .table tbody tr.cs-sub-item-row td,
+  .current-stock-wrapper table tr.sub-item-row td,
+  .current-stock-wrapper table tr.cs-sub-item-row td,
+  .current-stock-wrapper tr.sub-item-row td,
+  .current-stock-wrapper tr.cs-sub-item-row td {
+    background-color: #f9f9f9 !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Selected row print border reset */
+  .current-stock-wrapper table tr.selected td,
+  .current-stock-wrapper .table tbody tr.selected td,
+  .current-stock-wrapper tr.sub-item-row.selected td,
+  .current-stock-wrapper tr.cs-sub-item-row.selected td,
+  .current-stock-wrapper .table tbody tr.sub-item-row.selected td,
+  .current-stock-wrapper .table tbody tr.cs-sub-item-row.selected td {
+    background-color: transparent !important;
+    border: 1px solid #000000 !important;
+  }
+
+  .current-stock-wrapper .overflow-tooltip-text,
+  .current-stock-wrapper .cs-overflow-tooltip-text {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    display: block !important;
+    line-height: 1.15 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

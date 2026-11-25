@@ -1,0 +1,11 @@
+{
+  "template": "product-tag-50x30",
+  "data": [
+    {
+      "sku": "BLT-0042",
+      "name": "Hex Bolt M8 x 40",
+      "mrp": 125,
+      "mfgDate": "09-2026"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "product-tag-50x30",
+  "version": 1,
+  "title": "Product tag (50 × 30 mm, 2 across)",
+  "unit": "mm",
+  "layout": {
+    "width": 50,
+    "height": 30,
+    "across": 2,
+    "down": 4,
+    "verticalGap": 3,
+    "horizontalGap": 3,
+    "topMargin": 0,
+    "sideMargin": 0,
+    "textShift": 1.5
+  },
+  "fields": [
+    {
+      "type": "text",
+      "path": "name",
+      "format": "{value}",
+      "required": true
+    },
+    {
+      "type": "text",
+      "path": "sku",
+      "caption": "SKU",
+      "required": true
+    },
+    {
+      "type": "text",
+      "path": "mrp",
+      "format": "MRP: Rs. {value}"
+    },
+    {
+      "type": "text",
+      "path": "mfgDate",
+      "caption": "MFG"
+    }
+  ]
+}

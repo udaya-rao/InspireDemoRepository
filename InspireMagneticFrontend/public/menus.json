@@ -1,0 +1,252 @@
+[
+  {
+    "menu": "Dashboard",
+    "path": "/dashboard",
+    "disabled": false,
+    "visible": true,
+    "permissions": null,
+    "children": []
+  },
+  {
+    "menu": "Systems",
+    "visible": true,
+    "permissions": null,
+    "children": [
+      {
+        "label": "Change Employee <br/>Password",
+        "path": "/change-employee-password",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "CHANGE_EMPLOYEE_PASSWORD"
+      },
+      {
+        "label": "Company Information",
+        "path": "/companyinformation",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "COMPANY_INFORMATION"
+      },
+      {
+        "label": "Employee Master",
+        "path": "/employees",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "EMPLOYEE_MASTER"
+      },
+      {
+        "label": "Configure Label",
+        "path": "/print-label"
+      }
+    ]
+  },
+  {
+    "menu": "Masters",
+    "visible": true,
+    "permissions": null,
+    "children": [
+      {
+        "label": "Customer Master",
+        "path": "/customermaster",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "CUSTOMER_MASTER"
+      },
+      {
+        "label": "FG Inventory Master",
+        "path": "/fginventorymaster",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "FG_INVENTORY_MASTER"
+      },
+      {
+        "label": "GST Master",
+        "path": "/gstmaster",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "GST_MASTER"
+      },
+      {
+        "label": "HSN Master",
+        "path": "/hsnmaster",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "HSN_MASTER"
+      },
+      {
+        "label": "Inspection Master",
+        "path": "/inspectionmaster",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "INSPECTION_MASTER"
+      },
+      {
+        "label": "Inventory Master",
+        "path": "/inventorymaster",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "INVENTORY_MASTER"
+      },
+      {
+        "label": "Supplier Master",
+        "path": "/suppliermaster",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "SUPPLIER_MASTER"
+      },
+      {
+        "label": "Supplier Item",
+        "path": "/supplieritem",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "SUPPLIER_ITEM"
+      }
+    ]
+  },
+  {
+    "menu": "Marketing",
+    "visible": true,
+    "permissions": null,
+    "children": [
+      {
+        "label": "Quotation",
+        "path": "/quotation",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "QUOTATION"
+      },
+      {
+        "label": "Order",
+        "path": "/order",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "ORDER_ACCEPTANCE"
+      },
+      {
+        "label": "Delivery Notes",
+        "path": "/delivery-notes",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "DELIVERY_NOTE"
+      }
+    ]
+  },
+  {
+    "menu": "Production",
+    "visible": true,
+    "permissions": null,
+    "children": [
+      {
+        "label": "Work Order",
+        "path": "/workorder",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "WORK_ORDER"
+      },
+      {
+        "label": "Job Card",
+        "path": "/jobcard",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "JOB_CARD"
+      },
+      {
+        "label": "My Job Card",
+        "path": "/dailyjob",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "DAILY_JOB"
+      },
+      {
+        "label": "Work Order Goods <br />Receipt",
+        "path": "/grn/work-order",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "WORKORDER_GRN"
+      }
+    ]
+  },
+  {
+    "menu": "Purchase",
+    "visible": true,
+    "permissions": null,
+    "children": [
+      {
+        "label": "Purchase Order",
+        "path": "/purchase-order",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "PURCHASE_ORDER"
+      },
+      {
+        "label": "Purchase Goods Receipt",
+        "path": "/grn/purchase",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "PURCHASE_ORDER_GRN"
+      }
+    ]
+  },
+  {
+    "menu": "Quality",
+    "visible": true,
+    "permissions": null,
+    "children": [
+      {
+        "label": "Quality Inspection",
+        "path": "/grn/quality",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "GOODS_RECEIPT_NOTE_QUALITY"
+      }
+    ]
+  },
+  {
+    "menu": "Stores",
+    "visible": true,
+    "permissions": null,
+    "children": [
+      {
+        "label": "Stock Addition",
+        "path": "/stores/stock-addition",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "STOCK_ADDITION"
+      },
+      {
+        "label": "Stock Deduction",
+        "path": "/stores/stock-deduction",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "STOCK_DEDUCTION"
+      },
+      {
+        "label": "Stock Adjustment",
+        "path": "/stores/stock-adjustment",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "STOCK_ADJUSTMENT"
+      }
+    ]
+  },
+  {
+    "menu": "Report",
+    "visible": true,
+    "permissions": null,
+    "children": [
+      {
+        "label": "Transaction History",
+        "path": "/stores/transaction-history",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "TRANSACTION_HISTORY"
+      },
+      {
+        "label": "Current Stock",
+        "path": "/stores/current-stock",
+        "disabled": false,
+        "visible": true,
+        "permission_key": "CURRENT_STOCK"
+      }
+    ]
+  }
+]

@@ -1,0 +1,711 @@
+/* ==========================================================================
+   TransactionHistory.css
+   Styles for Transaction History screen (Normal Screen & Print Report)
+   ========================================================================== */
+
+/* ==================== NORMAL SCREEN STYLES ==================== */
+
+.transaction-history-wrapper table tbody tr {
+  height: 32px !important;
+}
+
+.transaction-history-wrapper table tbody tr td {
+  vertical-align: middle !important;
+}
+
+.transaction-history-wrapper table th:first-child,
+.transaction-history-wrapper table td:first-child,
+.transaction-history-wrapper table th.fixed-first-column,
+.transaction-history-wrapper table td.fixed-first-column {
+  width: 42px !important;
+  min-width: 42px !important;
+  max-width: 42px !important;
+  padding: 0 2px !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+.transaction-history-wrapper .expand-all-header-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row {
+  height: 32px !important;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row td,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row td {
+  padding: 0.1rem 0.5rem !important;
+  height: 32px !important;
+  vertical-align: middle !important;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row td:first-child,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row td:first-child {
+  background-color: #f8fafc !important;
+  border-right: 1px solid #dee2e6 !important;
+  transition: background-color 0.15s ease;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row:hover td,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row:hover td {
+  background-color: #f1f5f9 !important;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row:hover td:first-child,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row:hover td:first-child {
+  background-color: #f1f5f9 !important;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row.selected,
+.transaction-history-wrapper .table tbody tr.sub-item-row.selected td,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row.selected,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row.selected td {
+  background-color: #e3f2fd !important;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row.selected td:first-child,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row.selected td:first-child {
+  border-left: 1px solid #1677ff !important;
+}
+
+.transaction-history-wrapper .table tbody tr.selected td:first-child {
+  border-left: 1px solid #1677ff !important;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row.selected:hover td,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row.selected:hover td {
+  background-color: #dbeafe !important;
+}
+
+.transaction-history-wrapper .table tbody tr.sub-item-row.selected:hover td:first-child,
+.transaction-history-wrapper .table tbody tr.th-sub-item-row.selected:hover td:first-child {
+  background-color: #dbeafe !important;
+}
+
+.transaction-history-wrapper .filter-date-group input[type="date"]::-webkit-clear-button,
+.transaction-history-wrapper .th-filter-date-group input[type="date"]::-webkit-clear-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+.transaction-history-wrapper .mb-2 {
+  margin-bottom: 0 !important;
+}
+
+/* Printable header is hidden during normal screen display */
+.print-only-header,
+.th-print-only-header {
+  display: none;
+}
+
+/* Floating Print Bar Button Styles */
+.th-floating-print-bar {
+  bottom: 42px !important;
+}
+
+.th-floating-print-bar button {
+  background-color: transparent !important;
+}
+
+.th-floating-print-bar button:hover {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.th-floating-print-bar button:focus,
+.th-floating-print-bar button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.th-floating-print-bar button:focus:hover {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* ── Full Height & Responsive Layout for Transaction History ── */
+.transaction-history-wrapper {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.transaction-history-wrapper main {
+  flex: 1 1 0% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.transaction-history-wrapper main>div:last-child {
+  flex: 1 1 0% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+.transaction-history-wrapper .card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+.transaction-history-wrapper .card-body {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+}
+
+.transaction-history-wrapper #table-default {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+}
+
+/* Column sizing overrides for last Unit column */
+.transaction-history-wrapper table th:last-child,
+.transaction-history-wrapper table td:last-child {
+  width: 8% !important;
+  min-width: 55px !important;
+}
+
+/* Responsive Custom Filters for Transaction History */
+.transaction-history-wrapper .th-filter-date-group input[type="date"] {
+  width: 128px !important;
+  min-width: 125px !important;
+  height: 30px !important;
+  font-size: 12px !important;
+  padding: 2px 4px !important;
+}
+
+.transaction-history-wrapper .th-filter-item-code-group input {
+  width: 130px !important;
+  max-width: 135px !important;
+  height: 30px !important;
+  font-size: 12px !important;
+}
+
+/* ==================== PRINT STYLES ==================== */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide application UI elements */
+  aside,
+  .sidebar-hover-expand,
+  header,
+  nav,
+  .sidebar,
+  .btn,
+  button,
+  .no-print,
+  .d-print-none,
+  .dropdown,
+  .card-header,
+  .navbar,
+  .page-header,
+  [role="tablist"],
+  .tab-scrollbar,
+  .table-actions-section,
+  .table-pagination-controls,
+  #tab-global-minibar,
+  .global-minibar,
+  footer,
+  .footer,
+  #app-splash,
+  [class*="minibar"],
+  [id*="minibar"] {
+    display: none !important;
+  }
+
+  /* Hide all inactive tabs and any unrelated views */
+  .tab-content-scrollable>div[style*="display: none"],
+  .tab-content-scrollable>div[style*="display:none"] {
+    display: none !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  /* Reset layout containers so Transaction History uses full 100% page width and paginates freely */
+  .page,
+  .page-wrapper,
+  .page-wrapper>div,
+  .tab-content-scrollable,
+  .tab-content-scrollable>div,
+  .transaction-history-wrapper,
+  .transaction-history-wrapper main,
+  .transaction-history-wrapper main>div,
+  .transaction-history-wrapper [class*="table-instance-"],
+  .transaction-history-wrapper .card,
+  .transaction-history-wrapper .card.h-100,
+  .transaction-history-wrapper .h-100,
+  .transaction-history-wrapper .card-body,
+  .transaction-history-wrapper #table-default,
+  .transaction-history-wrapper .table-responsive {
+    position: static !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    float: none !important;
+    flex: none !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  .page-wrapper,
+  .sidebar-hover-expand~.page-wrapper,
+  .sidebar-hover-expand:hover~.page-wrapper,
+  .sidebar-hover-expand.expanded~.page-wrapper {
+    margin-left: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .print-only-header,
+  .th-print-only-header {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-only-header h2,
+  .th-print-only-header h2 {
+    margin: 0 0 2px 0 !important;
+    font-size: 15pt !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    color: #000000 !important;
+  }
+
+  .print-only-header h4,
+  .th-print-only-header h4 {
+    margin: 0 0 4px 0 !important;
+    font-size: 11pt !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    color: #000000 !important;
+  }
+
+  .print-only-header table.print-header-table,
+  .th-print-only-header table.th-print-header-table,
+  .th-print-only-header table.print-header-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    border: 1px solid #000000 !important;
+    margin: 4px 0 0 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .print-only-header table.print-header-table td,
+  .th-print-only-header table.th-print-header-table td,
+  .th-print-only-header table.print-header-table td {
+    border: 1px solid #000000 !important;
+    padding: 3px 6px !important;
+    font-size: 7.5pt !important;
+    line-height: 1.25 !important;
+    color: #000000 !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+  }
+
+  .print-only-header table.print-header-table td:first-child,
+  .print-only-header table.print-header-table td:nth-child(1) {
+    display: table-cell !important;
+    visibility: visible !important;
+    width: 30% !important;
+    text-align: left !important;
+  }
+
+  .print-only-header table.print-header-table td:nth-child(2) {
+    display: table-cell !important;
+    visibility: visible !important;
+    width: 40% !important;
+    text-align: center !important;
+  }
+
+  .print-only-header table.print-header-table td:nth-child(3) {
+    display: table-cell !important;
+    visibility: visible !important;
+    width: 30% !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+  }
+
+  /* ==================== MAIN TABLE ==================== */
+
+  .transaction-history-wrapper table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    border: 1px solid #000000 !important;
+    font-size: 7.5pt !important;
+    color: #000000 !important;
+    margin: 4px 0 0 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  /* Reset min-width and max-width so inline styles from DST do not break A4 print */
+  .transaction-history-wrapper table:not(.print-header-table) th,
+  .transaction-history-wrapper table:not(.print-header-table) td {
+    min-width: 0 !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+  }
+
+  /* Hide 1st column: Action / Expand button (MAIN table only) */
+  .transaction-history-wrapper table:not(.print-header-table) th:first-child,
+  .transaction-history-wrapper table:not(.print-header-table) td:first-child {
+    display: none !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  .transaction-history-wrapper .fixed-first-column {
+    position: static !important;
+    left: auto !important;
+    z-index: auto !important;
+  }
+
+  /* 7 Visible Column Widths (Sum = 14 + 12 + 31 + 9 + 9 + 13 + 12 = 100%) */
+  /* Col 2: Item Code */
+  .transaction-history-wrapper table:not(.print-header-table) th:nth-child(2) {
+    width: 14% !important;
+    text-align: left !important;
+  }
+
+  /* Col 3: Transaction Date */
+  .transaction-history-wrapper table:not(.print-header-table) th:nth-child(3) {
+    width: 12% !important;
+    text-align: center !important;
+  }
+
+  /* Col 4: Transaction Details */
+  .transaction-history-wrapper table:not(.print-header-table) th:nth-child(4) {
+    width: 31% !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Col 5: Decrease */
+  .transaction-history-wrapper table:not(.print-header-table) th:nth-child(5) {
+    width: 9% !important;
+    text-align: right !important;
+  }
+
+  /* Col 6: Increase */
+  .transaction-history-wrapper table:not(.print-header-table) th:nth-child(6) {
+    width: 9% !important;
+    text-align: right !important;
+  }
+
+  /* Col 7: Balance Stock */
+  .transaction-history-wrapper table:not(.print-header-table):not(.th-print-header-table) th:nth-child(7) {
+    width: 13% !important;
+    text-align: right !important;
+    font-weight: bold !important;
+  }
+
+  /* Col 8: Unit */
+  .transaction-history-wrapper table:not(.print-header-table) th:nth-child(8) {
+    width: 12% !important;
+    text-align: center !important;
+  }
+
+  /* Sub-row cell widths & alignments (sub-rows have all 8 individual columns) */
+  .transaction-history-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(2),
+  .transaction-history-wrapper table:not(.print-header-table) tr.th-sub-item-row td:nth-child(2) {
+    width: 14% !important;
+    text-align: left !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(3),
+  .transaction-history-wrapper table:not(.print-header-table) tr.th-sub-item-row td:nth-child(3) {
+    width: 12% !important;
+    text-align: center !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(4),
+  .transaction-history-wrapper table:not(.print-header-table) tr.th-sub-item-row td:nth-child(4) {
+    width: 31% !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(5),
+  .transaction-history-wrapper table:not(.print-header-table) tr.th-sub-item-row td:nth-child(5) {
+    width: 9% !important;
+    text-align: right !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(6),
+  .transaction-history-wrapper table:not(.print-header-table) tr.th-sub-item-row td:nth-child(6) {
+    width: 9% !important;
+    text-align: right !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(7),
+  .transaction-history-wrapper table:not(.print-header-table) tr.th-sub-item-row td:nth-child(7) {
+    width: 13% !important;
+    text-align: right !important;
+    font-weight: normal !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr.sub-item-row td:nth-child(8),
+  .transaction-history-wrapper table:not(.print-header-table) tr.th-sub-item-row td:nth-child(8) {
+    width: 12% !important;
+    text-align: center !important;
+  }
+
+  /* Parent group row cell alignments (Item Code & Description merged across 3 columns with colspan="3") */
+  .transaction-history-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.th-sub-item-row) td[colspan="3"],
+  .transaction-history-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.th-sub-item-row) td:nth-child(2) {
+    text-align: left !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.th-sub-item-row) td:nth-child(3) {
+    text-align: right !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.th-sub-item-row) td:nth-child(4) {
+    text-align: right !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.th-sub-item-row) td:nth-child(5) {
+    text-align: right !important;
+    font-weight: normal !important;
+  }
+
+  .transaction-history-wrapper table:not(.print-header-table) tr:not(.sub-item-row):not(.th-sub-item-row) td:nth-child(6) {
+    text-align: center !important;
+  }
+
+  /* Table Header */
+  .transaction-history-wrapper table thead,
+  .transaction-history-wrapper .table thead {
+    display: table-header-group !important;
+    position: static !important;
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  .transaction-history-wrapper table thead tr,
+  .transaction-history-wrapper .table thead tr {
+    position: static !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    border-top: 1px solid #000000 !important;
+    border-bottom: 1px solid #000000 !important;
+  }
+
+  .transaction-history-wrapper table th,
+  .transaction-history-wrapper .table th,
+  .transaction-history-wrapper table thead th,
+  .transaction-history-wrapper .table thead th,
+  .transaction-history-wrapper table thead th+th,
+  .transaction-history-wrapper .table thead th+th,
+  .transaction-history-wrapper table thead th.actions-column,
+  .transaction-history-wrapper table thead th.fixed-first-column {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+    border-top: 1px solid #000000 !important;
+    border-bottom: 1px solid #000000 !important;
+    border-left: 1px solid #000000 !important;
+    border-right: 1px solid #000000 !important;
+    border-color: #000000 !important;
+    font-size: 7.5pt !important;
+    font-weight: bold !important;
+    padding: 4px 3px !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    position: static !important;
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .transaction-history-wrapper table th span,
+  .transaction-history-wrapper table th button {
+    color: #000000 !important;
+    font-size: 7.5pt !important;
+    font-weight: bold !important;
+    white-space: normal !important;
+    display: inline !important;
+    text-align: inherit !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Table Body */
+  .transaction-history-wrapper table tbody,
+  .transaction-history-wrapper .table tbody {
+    display: table-row-group !important;
+  }
+
+  /* Grouped parent rows & Child sub-item rows: EXACT SAME HEIGHT in Report popup */
+  .transaction-history-wrapper .table tbody tr,
+  .transaction-history-wrapper table tbody tr,
+  .transaction-history-wrapper table tr,
+  .transaction-history-wrapper table tr.selected,
+  .transaction-history-wrapper .table tbody tr.sub-item-row,
+  .transaction-history-wrapper .table tbody tr.sub-item-row.selected,
+  .transaction-history-wrapper .table tbody tr.th-sub-item-row,
+  .transaction-history-wrapper .table tbody tr.th-sub-item-row.selected,
+  .transaction-history-wrapper table tr.sub-item-row,
+  .transaction-history-wrapper table tr.sub-item-row.selected,
+  .transaction-history-wrapper table tr.th-sub-item-row,
+  .transaction-history-wrapper table tr.th-sub-item-row.selected,
+  .transaction-history-wrapper tr.sub-item-row,
+  .transaction-history-wrapper tr.sub-item-row.selected,
+  .transaction-history-wrapper tr.th-sub-item-row,
+  .transaction-history-wrapper tr.th-sub-item-row.selected {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    background-color: transparent !important;
+    border: none !important;
+    position: static !important;
+  }
+
+  .transaction-history-wrapper .table tbody tr td,
+  .transaction-history-wrapper table tbody tr td,
+  .transaction-history-wrapper table td,
+  .transaction-history-wrapper .table tbody tr.sub-item-row td,
+  .transaction-history-wrapper .table tbody tr.sub-item-row.selected td,
+  .transaction-history-wrapper .table tbody tr.th-sub-item-row td,
+  .transaction-history-wrapper .table tbody tr.th-sub-item-row.selected td,
+  .transaction-history-wrapper table tr.sub-item-row td,
+  .transaction-history-wrapper table tr.sub-item-row.selected td,
+  .transaction-history-wrapper table tr.th-sub-item-row td,
+  .transaction-history-wrapper table tr.th-sub-item-row.selected td,
+  .transaction-history-wrapper tr.sub-item-row td,
+  .transaction-history-wrapper tr.sub-item-row.selected td,
+  .transaction-history-wrapper tr.th-sub-item-row td,
+  .transaction-history-wrapper tr.th-sub-item-row.selected td {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    border: 1px solid #000000 !important;
+    padding: 2.5px 3px !important;
+    color: #000000 !important;
+    font-size: 7.5pt !important;
+    line-height: 1.15 !important;
+    vertical-align: middle !important;
+    position: static !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Sub-item child rows background */
+  .transaction-history-wrapper .table tbody tr.sub-item-row td,
+  .transaction-history-wrapper .table tbody tr.th-sub-item-row td,
+  .transaction-history-wrapper table tr.sub-item-row td,
+  .transaction-history-wrapper table tr.th-sub-item-row td,
+  .transaction-history-wrapper tr.sub-item-row td,
+  .transaction-history-wrapper tr.th-sub-item-row td {
+    background-color: #f9f9f9 !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Selected row print border reset */
+  .transaction-history-wrapper table tr.selected td,
+  .transaction-history-wrapper .table tbody tr.selected td,
+  .transaction-history-wrapper tr.sub-item-row.selected td,
+  .transaction-history-wrapper tr.th-sub-item-row.selected td,
+  .transaction-history-wrapper .table tbody tr.sub-item-row.selected td,
+  .transaction-history-wrapper .table tbody tr.th-sub-item-row.selected td {
+    background-color: transparent !important;
+    border: 1px solid #000000 !important;
+  }
+
+  .transaction-history-wrapper .overflow-tooltip-text,
+  .transaction-history-wrapper .th-overflow-tooltip-text {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    display: block !important;
+    line-height: 1.15 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

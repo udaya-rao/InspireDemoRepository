@@ -1,0 +1,9 @@
+{
+	"IMFolders": [
+		{
+			"Source": "InspectionVideos",
+			"FileUploadPath": "C:\\InspireMagnetics\\IM_Office\\ERP Files\\InspectionVideos",
+			"ErrorMessage": "Upload Inspection Videos Path Not Configured. !!!"
+		}
+	]
+}

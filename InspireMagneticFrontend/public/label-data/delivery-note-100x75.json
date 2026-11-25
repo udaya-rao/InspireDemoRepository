@@ -1,0 +1,21 @@
+{
+  "template": "delivery-note-100x75",
+  "data": [
+    {
+      "deliveryNoteNo": "DN-2026-0142",
+      "date": "14-10-2026",
+      "vehicleNo": "KA 19 AB 1234",
+      "customer": {
+        "name": "SCHNEIDER ELECTRIC INDIA PVT LTD",
+        "plant": "MPS Mysore Mfg. Plant",
+        "city": "Mysore",
+        "pin": "570018"
+      },
+      "box": {
+        "current": 1,
+        "total": 2
+      },
+      "totalQty": 375
+    }
+  ]
+}

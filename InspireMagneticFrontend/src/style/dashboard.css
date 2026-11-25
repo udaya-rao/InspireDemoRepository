@@ -1,0 +1,15 @@
+.dashboard-root {
+  display: flex;
+}
+
+.dashboard-main {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(99, 55, 97, 0.1);
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+

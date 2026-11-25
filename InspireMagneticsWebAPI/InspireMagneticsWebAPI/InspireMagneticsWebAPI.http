@@ -1,0 +1,6 @@
+@InspireMagneticsWebAPI_HostAddress = http://localhost:5110
+
+GET {{InspireMagneticsWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Inspection Report - CORES - Inspire Magnetics</title>
+
+
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 8mm 10mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: Calibri, Aptos, "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            /*background-color: #f0f2f5;*/
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container for A4 sheet representation */
+        .sheet-wrapper {
+            width: 100%;
+            max-width: 1020px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 10px;
+            /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);*/
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+
+            .sheet-wrapper {
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* Master Table Grid */
+        table.report-grid {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1.2px solid #333333;
+            table-layout: fixed;
+        }
+
+            table.report-grid td,
+            table.report-grid th {
+                border: 0.65px solid #444444;
+                padding: 2.5px 4px;
+                vertical-align: middle;
+                font-size: 12px;
+                color: #000000;
+                line-height: 1.25;
+            }
+
+        /* 1. TOP HEADER */
+        .logo-cell {
+            text-align: center;
+            vertical-align: middle;
+            padding: 3px;
+            border-right: 1.2px solid #333333 !important;
+            background-color: #ffffff;
+            height: 56px;
+        }
+
+            .logo-cell img {
+                max-width: 115px;
+                max-height: 50px;
+                object-fit: contain;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+        .report-title-cell {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-family: Calibri, Aptos, Arial, sans-serif;
+            padding: 4px;
+        }
+
+        .form-meta-cell {
+            font-size: 11.5px;
+            line-height: 1.35;
+            padding: 3px 5px;
+            vertical-align: middle;
+            border-left: 1.2px solid #333333 !important;
+            font-weight: 700;
+            font-family: Calibri, Aptos, Arial, sans-serif;
+        }
+
+            .form-meta-cell div {
+                white-space: nowrap;
+            }
+
+        /* 2. COMPANY NAME & CATEGORY BANNERS */
+        .company-banner-row td {
+            border-top: 1.2px solid #333333 !important;
+            border-bottom: 0.65px solid #444444 !important;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            padding: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .category-banner-row td {
+            border-top: 0.65px solid #444444 !important;
+            border-bottom: 1.2px solid #333333 !important;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 3px;
+            text-transform: uppercase;
+        }
+
+        /* 3. SUPPLIER & PO INFORMATION GRID */
+        .field-lbl {
+            font-weight: 700;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            padding: 2.5px 5px;
+            height: 20px;
+            border-right: 0.65px solid #444444 !important;
+        }
+
+        .field-val {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 2.5px 5px;
+            border-right: 0.65px solid #444444 !important;
+            word-break: break-word;
+            overflow: hidden;
+        }
+
+        .right-lbl {
+            font-weight: 700;
+            font-size: 11.5px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            border-right: 0.65px solid #444444 !important;
+            color: #000000;
+        }
+
+        .lot-decision-cell {
+            text-align: center;
+            font-weight: 700;
+            font-size: 11.5px;
+            line-height: 1.35;
+            padding: 4px;
+            text-transform: uppercase;
+            color: #000000;
+            vertical-align: middle;
+            border-right: 0.65px solid #444444 !important;
+        }
+
+        /* 4. TABLE HEADERS */
+        .grid-hdr th {
+            background-color: #ffffff;
+            font-weight: 700;
+            font-size: 11.5px;
+            text-align: center;
+            vertical-align: middle;
+            padding: 4px 2px;
+            text-transform: uppercase;
+            border-top: 1.2px solid #333333 !important;
+            border-bottom: 0.9px solid #444444 !important;
+            line-height: 1.2;
+        }
+
+        /* Column Specific Formatting */
+        .td-sl {
+            text-align: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .td-method-param {
+            text-align: left;
+            font-weight: 700;
+            font-size: 11.5px;
+            padding-left: 5px;
+            line-height: 1.25;
+        }
+
+        .td-sample-lvl {
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1.3;
+            padding: 3px;
+        }
+
+        .td-ref-std {
+            text-align: center;
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 1.25;
+            padding: 3px;
+            text-transform: uppercase;
+        }
+
+        .td-jigs {
+            text-align: center;
+            font-weight: 700;
+            font-size: 11.5px;
+            padding: 3px;
+            text-transform: uppercase;
+        }
+
+        .td-checkpoints {
+            font-size: 11.5px;
+            line-height: 1.35;
+            padding: 3px 5px;
+        }
+
+            .td-checkpoints .pt-item {
+                margin-bottom: 2px;
+            }
+
+                .td-checkpoints .pt-item:last-child {
+                    margin-bottom: 0;
+                }
+
+        .bold-txt {
+            font-weight: 700;
+        }
+
+        .td-sample-sz {
+            text-align: center;
+            font-size: 12px;
+            word-break: break-word;
+        }
+
+        .td-result, td-test-result {
+            text-align: center;
+            font-size: 12px;
+            word-break: break-word;
+        }
+
+        /* Specific Row Heights */
+        .row-visual td {
+            height: 54px;
+        }
+
+        .row-mech td {
+            height: 34px;
+        }
+
+        .row-elec td {
+            height: 40px;
+        }
+
+        .row-code td {
+            height: 26px;
+        }
+
+        .row-rohs td {
+            height: 26px;
+        }
+
+        .row-supplier td {
+            height: 26px;
+        }
+
+        /* Keep the signature cells together when printing. */
+        .sig-row {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        /* 5. REMARKS & SIGNATURES (CLEAN, NO EXTRA WHITE SPACE) */
+        .remark-row td {
+            border-top: 1.2px solid #333333 !important;
+            padding: 4px 6px;
+            font-weight: 700;
+            font-size: 12px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .sig-row td {
+            border-top: 0.9px solid #444444 !important;
+            padding: 4px 6px;
+            vertical-align: top;
+            height: 34px;
+        }
+
+        .sig-line {
+            line-height: 1.35;
+            margin: 1px 0;
+        }
+
+        .sig-title {
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .sig-name {
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .sig-date-val {
+            font-weight: 500;
+            margin-left: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sheet-wrapper">
+        <table class="report-grid">
+
+            <colgroup>
+                <col style="width: 32px;"> <!-- Col 1: SL. NO. -->
+                <col style="width: 135px;"> <!-- Col 2: INSPECTION METHOD & PARAMETERS -->
+                <col style="width: 115px;"> <!-- Col 3: SAMPLE INSPECTION LEVEL (Decreased) -->
+                <col style="width: 125px;"> <!-- Col 4: REFERENCE STANDARD (Display single row) -->
+                <col style="width: 110px;"> <!-- Col 5: REQUIRED JIGS / TOLLS / INSTRUMENTS -->
+                <col style="width: 130px;"> <!-- Col 6: Right Label Column (Starts at Product Check Points) -->
+                <col style="width: 115px;"> <!-- Col 7: Product Check Points remainder -->
+                <col style="width: 55px;"> <!-- Col 8: SAMPLE SIZE (Decreased) -->
+                <col style="width: 70px;"> <!-- Col 9: RESULT -->
+                <col style="width: 118px;"> <!-- Col 10: TEST RESULT (Increased) -->
+            </colgroup>
+
+            <!-- ======================================================================
+                 ROW 1: HEADER (LOGO: Cols 1-2 | TITLE: Cols 3-8 | FORM NO: Cols 9-10)
+                 ====================================================================== -->
+            <tr>
+                <!-- Left: Inspire Magnetics Logo (Cols 1-2 = 167px) -->
+                <td colspan="2" class="logo-cell">
+                    #CompanyLogoImage#
+                </td>
+
+                <!-- Middle: Title (Cols 3-8 = 692px) -->
+                <td colspan="6" class="report-title-cell" style="font-weight:bold; font-size:20px;">
+                    SAMPLE INSPECTION REPORT
+                </td>
+
+                <!-- Right: Form Meta (Cols 9-10 = 148px) -->
+                <td colspan="2" class="form-meta-cell">
+                    <div>Form No:</div>
+                    <div>S/IM/QMS/IQC/04</div>
+                    <div>REV NO: 02 &amp; 06-04-26</div>
+                </td>
+            </tr>
+
+            <!-- ======================================================================
+                 ROW 2: COMPANY NAME BANNER (Cols 1-10 = 10 cols)
+                 ====================================================================== -->
+            <tr class="company-banner-row">
+                <td colspan="10" style="font-weight:bold; font-size:20px;">
+                    INSPIRE MAGNETICS PVT.LTD
+                </td>
+            </tr>
+
+            <!-- ======================================================================
+                 ROW 3: CATEGORY BANNER (Cols 1-10 = 10 cols)
+                 ====================================================================== -->
+            <tr class="category-banner-row">
+                <td colspan="10">
+                    CORES
+                </td>
+            </tr>
+
+
+
+            <!-- Info Row 1: Supplier Name | Description & Part -->
+            <tr>
+                <td colspan="2" class="field-lbl">SUPPLIER NAME :</td>
+                <td colspan="3" class="field-val">#SupplierName#</td>
+                <td colspan="1" class="field-lbl right-lbl">
+                    DESCRIPTION &amp; PART :
+                </td>
+                <td colspan="4" class="field-val">#DescriptionAndPart#</td>
+            </tr>
+
+            <!-- Info Row 2: Invoice No & Date | Lot Accepted Decision (Spans Cols 6 & 7-9 across 3 rows) -->
+            <tr>
+                <td colspan="2" class="field-lbl">INVOICE NO &amp; DATE :</td>
+                <td colspan="3" class="field-val">#InvoiceNoDate#</td>
+                <!-- Left: Lot Decision Label in Col 6 with right-side border matching Description & Part -->
+                <td colspan="1" rowspan="3" class="lot-decision-cell">
+                    LOT ACCEPTED / REJECTED /<br>
+                    ACCEPTED WITH DEVIATION
+                </td>
+                <!-- Right: Lot Decision Value in Cols 7-9 -->
+                <td colspan="4" rowspan="3" class="field-val">#LotStatus#</td>
+            </tr>
+
+            <!-- Info Row 3: Qty Received -->
+            <tr>
+                <td colspan="2" class="field-lbl">QTY RECEIVED :</td>
+                <td colspan="3" class="field-val">#QtyReceived#</td>
+            </tr>
+
+            <!-- Info Row 4: Qty Accepted -->
+            <tr>
+                <td colspan="2" class="field-lbl">QTY ACCEPTED :</td>
+                <td colspan="3" class="field-val">#QtyAccepted#</td>
+            </tr>
+
+            <!-- Info Row 5: Qty Shortage | WO / PO No & Date -->
+            <tr>
+                <td colspan="2" class="field-lbl">QTY SHORTAGE :</td>
+                <td colspan="3" class="field-val">#QtyShortage#</td>
+                <td colspan="1" class="field-lbl right-lbl">WO / PO NO &amp; DATE :</td>
+                <td colspan="4" class="field-val">#PoNoDate#</td>
+            </tr>
+
+            <!-- Info Row 6: Qty Rejected | Received Date -->
+            <tr>
+                <td colspan="2" class="field-lbl">QTY REJECTED :</td>
+                <td colspan="3" class="field-val">#QtyRejected#</td>
+                <td colspan="1" class="field-lbl right-lbl">RECEIVED DATE :</td>
+                <td colspan="4" class="field-val">#ReceivedDate#</td>
+            </tr>
+
+            <!-- ======================================================================
+                 ROW 10: INSPECTION GRID HEADERS (Cols 1 to 10)
+                 ====================================================================== -->
+            <tr class="grid-hdr">
+                <th colspan="1">SL.<br>NO.</th>
+                <th colspan="1">INSPECTION<br>METHOD &amp;<br>PARAMETERS</th>
+                <th colspan="1">SAMPLE INSPECTION<br>LEVEL</th>
+                <th colspan="1">REFERENCE<br>STANDARD</th>
+                <th colspan="1">REQUIRED<br>JIGS / TOLLS /<br>INSTRUMENTS</th>
+                <th colspan="2">PRODUCT<br>CHECK POINTS</th>
+                <th colspan="1">SAMPLE SIZE</th>
+                <th colspan="1">RESULT</th>
+                <th colspan="1">TEST RESULT</th>
+            </tr>
+
+            #InspectionRows#
+
+            <!-- ======================================================================
+                 ROW 17: REMARK (Cols 1-10 = 10 cols)
+                 ====================================================================== -->
+            <tr class="remark-row">
+                <td colspan="10">
+                    REMARK : <span style="font-weight: normal;">#Remark#</span>
+                </td>
+            </tr>
+
+            <!-- ======================================================================
+                 ROW 18: SIGNATURES (Left: Cols 1-5 | Right: Cols 6-10)
+                 ====================================================================== -->
+            <tr class="sig-row">
+                <td colspan="5">
+                    <div class="sig-line">
+                        <span class="sig-title">INSPECTED BY :</span>
+                        <span class="sig-name">#InspectedBy#</span>
+                    </div>
+                    <div class="sig-line">
+                        <span class="sig-title">DATE :</span>
+                        <span class="sig-date-val">#InspectedDate#</span>
+                    </div>
+                </td>
+                <td colspan="5">
+                    <div class="sig-line">
+                        <span class="sig-title">AUTHORISED BY :</span>
+                        <span class="sig-name">#AuthorisedBy#</span>
+                    </div>
+                    <div class="sig-line">
+                        <span class="sig-title">DATE :</span>
+                        <span class="sig-date-val">#AuthorisedDate#</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

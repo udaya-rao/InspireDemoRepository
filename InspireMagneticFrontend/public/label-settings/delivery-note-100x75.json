@@ -1,0 +1,57 @@
+{
+  "name": "delivery-note-100x75",
+  "version": 1,
+  "title": "Delivery note label (100 × 75 mm)",
+  "unit": "mm",
+  "layout": {
+    "width": 100,
+    "height": 75,
+    "across": 1,
+    "down": 3,
+    "verticalGap": 4,
+    "horizontalGap": 4,
+    "topMargin": 0,
+    "sideMargin": 0,
+    "textShift": 3
+  },
+  "fields": [
+    {
+      "type": "static",
+      "text": "DELIVERY NOTE"
+    },
+    {
+      "type": "text",
+      "path": "deliveryNoteNo",
+      "caption": "DN NO",
+      "required": true
+    },
+    {
+      "type": "text",
+      "path": "date",
+      "caption": "DATE",
+      "required": true
+    },
+    {
+      "type": "template",
+      "format": "{customer.name}",
+      "required": true
+    },
+    {
+      "type": "template",
+      "format": "{customer.plant}, {customer.city} - {customer.pin}"
+    },
+    {
+      "type": "template",
+      "format": "BOX {box.current} OF {box.total}"
+    },
+    {
+      "type": "template",
+      "format": "QTY: {totalQty} No's"
+    },
+    {
+      "type": "text",
+      "path": "vehicleNo",
+      "caption": "VEHICLE NO"
+    }
+  ]
+}

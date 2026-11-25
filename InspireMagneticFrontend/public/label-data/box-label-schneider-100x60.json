@@ -1,0 +1,19 @@
+{
+  "template": "box-label-schneider-100x60",
+  "data": [
+    {
+      "date": "05-10-2026",
+      "batchNo": "41 - 26",
+      "partNo": "3W114250",
+      "invoiceNo": "173 (BOX 1 OF 8)",
+      "noOfItems": "375 No's",
+      "to": [
+        "SCHNEIDER ELECTRIC INDIA",
+        "PRIVATE LIMITED,",
+        "MPS Mysore Mfg. Plant,",
+        "No.324-330, KIADB Industrial Estate,",
+        "MYSORE – 570018"
+      ]
+    }
+  ]
+}

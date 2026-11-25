@@ -1,0 +1,15 @@
+{
+    "ConnectionStrings": [
+        {
+            "Environment": "DevOrProd",
+            "Connections": {
+                //Dev
+                "InspireMagneticsDb": "Driver=SQL Anywhere 17;Uid=WMFdfxtScuZUr3BNL1yfJjfY25/4l7iwsrCOCKqyUqQ=;Pwd=seEpK5BUkOSLPji9R6Cf0pvyyLykXCJAfYhWqcKC884=;Server=jB0Hm2GSvFQRNgYhGhJ0UmfVYCAlXRRvRZJEuUU6zMc=;Host=DJ4LmKuggeJCXUYoBHZkLIEJWeZXvP0R47DNUmLITrInW5y2vTgR9QM7zFwAqKgP;Database=HTI0Pf4FPTUn05yfuIBGBNgSUJGqpdf16TiHNh5eVjA7voJYWyCnyOGIoUukzc2Q;CPOOL=YES;CPTO=60;MC=20;"
+                //Staging
+                //"InspireMagneticsDb": "Driver=SQL Anywhere 17;Uid=WMFdfxtScuZUr3BNL1yfJjfY25/4l7iwsrCOCKqyUqQ=;Pwd=seEpK5BUkOSLPji9R6Cf0pvyyLykXCJAfYhWqcKC884=;Server=eMmAlEFHUjwokjl56hazChebIpCN+BSo6xMRI6Sk7uFYTJCOneZws43JdwdoL232;Host=8atWr0M26laQ6KG8XsTjAXvWptFJ7BKXfuHmj5bTONJV7Y/TCCK2RIRHLXpP3cif;Database=HTI0Pf4FPTUn05yfuIBGBNgSUJGqpdf16TiHNh5eVjA7voJYWyCnyOGIoUukzc2Q;CPOOL=YES;CPTO=60;MC=20;"
+                //Production
+                //"InspireMagneticsDb": "Driver=SQL Anywhere 17;Uid=JW81V9bexb3i/xxbfF3mKt+7CsmakCt4uGH8bKAA9cI=;Pwd=sQU20MKs5Yb136N28CNUvwtkmGljo2OfWF8zf76jKt0=;Server=0tExlKmjnV+Mmpp5pJ0wgl9kmBS1EpPNXSw8iMifYeehuSWhC5FJhL4zf47bhvdN; Host=5MnjOlEqu4V4W+mDJxZiM8G9ptRNKPFTbjsxrbVpiSIB76b2N+OMPJO+76AwiB32; Database=32O5no4PnytFsPbJk/Y1/dj/O7njUyImHUhbj2QGY7ri2KFqkMmjd0+5tv1tX3PX;CPOOL=YES;CPTO=60;MC=20;"
+            }
+        }
+    ]
+}

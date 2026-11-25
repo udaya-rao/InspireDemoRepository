@@ -1,0 +1,73 @@
+.page-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  transition: all 0.3s ease-in-out;
+}
+
+.page-loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Logo Animation */
+.page-animated-logo {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+/* Three Dots */
+.page-loader-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.page-loader-dots span {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: dotsJump 1.2s infinite ease-in-out;
+}
+
+.page-loader-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.page-loader-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Loader Text */
+.page-loader-text {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(0.97); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.97); opacity: 0.8; }
+}
+
+@keyframes dotsJump {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-7px); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.2; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}

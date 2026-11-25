@@ -1,0 +1,51 @@
+{
+  "name": "box-label-schneider-100x60",
+  "version": 1,
+  "title": "Schneider box label (100 × 60 mm)",
+  "unit": "mm",
+  "layout": {
+    "width": 100,
+    "height": 60,
+    "across": 1,
+    "down": 3,
+    "verticalGap": 4,
+    "horizontalGap": 4,
+    "topMargin": 0,
+    "sideMargin": 0,
+    "textShift": 3
+  },
+  "fields": [
+    {
+      "type": "text",
+      "path": "date",
+      "caption": "DATE",
+      "required": true
+    },
+    {
+      "type": "text",
+      "path": "batchNo",
+      "caption": "BATCH NO"
+    },
+    {
+      "type": "text",
+      "path": "partNo",
+      "caption": "PART NO",
+      "required": true
+    },
+    {
+      "type": "text",
+      "path": "invoiceNo",
+      "caption": "INVOICE NO"
+    },
+    {
+      "type": "text",
+      "path": "noOfItems",
+      "caption": "No. OF ITEMS"
+    },
+    {
+      "type": "block",
+      "path": "to",
+      "caption": "To:-"
+    }
+  ]
+}

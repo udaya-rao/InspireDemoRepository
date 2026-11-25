@@ -1,0 +1,23 @@
+
+
+{
+  "templates": [
+    {
+      "name": "box-label-schneider-100x60",
+      "title": "Schneider box label (100 × 60 mm)"
+    },
+    {
+      "name": "shipping-label-100x150",
+      "title": "Shipping label (100 × 150 mm)"
+    },
+    {
+      "name": "product-tag-50x30",
+      "title": "Product tag (50 × 30 mm, 2 across)"
+    },
+    {
+      "name": "delivery-note-100x75",
+      "title": "Delivery note label (100 × 75 mm)"
+    }
+  ]
+}
+

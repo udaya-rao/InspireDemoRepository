@@ -1,0 +1,191 @@
+/* ── Disabled field styles ── */
+.saj-page-wrapper input:disabled,
+.saj-page-wrapper select:disabled,
+.saj-page-wrapper textarea:disabled {
+  background-color: #e9ecef !important;
+  color: #495057 !important;
+  opacity: 1;
+  cursor: not-allowed !important;
+}
+
+/* ── Compact header fields ── */
+.saj-top-fields .form-control:not(textarea) {
+  padding: 0px 8px !important;
+  font-size: 13px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  line-height: 28px !important;
+}
+.saj-page-wrapper div[class*="-control"] {
+  min-height: 28px !important;
+  height: 28px !important;
+  font-size: 13px !important;
+}
+.saj-page-wrapper div[class*="-ValueContainer"] {
+  padding: 0px 6px !important;
+  min-height: 26px !important;
+  height: 26px !important;
+}
+.saj-page-wrapper div[class*="-IndicatorsContainer"] {
+  height: 26px !important;
+}
+.saj-page-wrapper div[class*="-singleValue"],
+.saj-page-wrapper div[class*="-placeholder"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 26px !important;
+  margin-top: 0 !important;
+}
+.saj-page-wrapper div[class*="-Input"] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ── Number field spinners ── */
+.saj-page-wrapper input[type="number"]::-webkit-inner-spin-button,
+.saj-page-wrapper input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.saj-page-wrapper input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ── Flex rows for header ── */
+.saj-top-fields.row {
+  display: flex;
+  align-items: flex-start;
+}
+.saj-top-fields [class*="col-"] {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.saj-top-fields .mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* ── Section card ── */
+.saj-product-card {
+  margin-top: 10px;
+  border: none;
+  border-radius: 7px;
+}
+.saj-section-header {
+  background: rgb(147, 108, 145);
+  padding: 8px 14px;
+  margin-bottom: 7px !important;
+  border-radius: 7px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.saj-section-header h5 {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1;
+  color: #fff;
+}
+
+/* ── Details table styles ── */
+.saj-table-responsive {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+}
+.saj-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+.saj-thead {
+  position: sticky;
+  top: 0;
+  z-index: 24;
+}
+.saj-th {
+  padding: 4px 8px !important;
+  font-weight: bold !important;
+  font-size: 13px !important;
+  white-space: nowrap;
+  border-bottom: 2px solid #dee2e6;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  background: #7a4b78 !important;
+  color: #ffffff !important;
+  text-align: center;
+  text-transform: none !important;
+}
+.saj-td {
+  padding: 4px 8px !important;
+  vertical-align: middle;
+  border-bottom: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+.saj-input {
+  width: 100% !important;
+  padding: 3px 6px !important;
+  font-size: 13px;
+  background-color: #ffffff;
+}
+.saj-input::-webkit-outer-spin-button,
+.saj-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.saj-input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.saj-input:disabled {
+  background-color: #e9ecef !important;
+  cursor: not-allowed !important;
+  color: #495057 !important;
+}
+.saj-input.is-invalid {
+  border-color: #dc3545 !important;
+}
+.saj-error {
+  color: #dc3545;
+  font-size: 11px;
+  margin-top: 2px;
+  text-align: left;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.saj-table .mb-2 {
+  margin-bottom: 0 !important;
+}
+.saj-table .form-label {
+  display: none !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .saj-top-fields {
+    flex-wrap: wrap !important;
+  }
+  .saj-top-fields .col-md-2,
+  .saj-top-fields .col-md-3,
+  .saj-top-fields .col-md-4,
+  .saj-top-fields .col-md-6 {
+    flex: 0 0 auto !important;
+    width: 50% !important;
+    margin-bottom: 6px;
+  }
+  .saj-top-fields .saj-field-remarks,
+  .saj-top-fields .col-md-10 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin-bottom: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .saj-top-fields .col-md-2,
+  .saj-top-fields .col-md-3,
+  .saj-top-fields .col-md-4,
+  .saj-top-fields .col-md-6,
+  .saj-top-fields .saj-field-remarks,
+  .saj-top-fields .col-md-10 {
+    width: 100% !important;
+  }
+}

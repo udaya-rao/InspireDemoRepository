@@ -1,0 +1,62 @@
+{
+  "name": "shipping-label-100x150",
+  "version": 1,
+  "title": "Shipping label (100 × 150 mm)",
+  "unit": "mm",
+  "layout": {
+    "width": 100,
+    "height": 150,
+    "across": 1,
+    "down": 1,
+    "verticalGap": 3,
+    "horizontalGap": 0,
+    "topMargin": 0,
+    "sideMargin": 0,
+    "textShift": 3
+  },
+  "fields": [
+    {
+      "type": "static",
+      "text": "SHIP TO:-"
+    },
+    {
+      "type": "template",
+      "format": "{customer.name}",
+      "required": true
+    },
+    {
+      "type": "template",
+      "format": "{address.line1}",
+      "required": true
+    },
+    {
+      "type": "template",
+      "format": "{address.line2}"
+    },
+    {
+      "type": "template",
+      "format": "{address.city}, {address.state} - {address.pin}",
+      "required": true
+    },
+    {
+      "type": "template",
+      "format": "Ph: {customer.phone}"
+    },
+    {
+      "type": "text",
+      "path": "orderId",
+      "caption": "ORDER",
+      "required": true
+    },
+    {
+      "type": "text",
+      "path": "courier",
+      "caption": "COURIER"
+    },
+    {
+      "type": "text",
+      "path": "weight",
+      "caption": "WEIGHT"
+    }
+  ]
+}

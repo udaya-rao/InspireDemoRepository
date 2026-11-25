@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9pt;
+            color: #000;
+            background: #fff;
+            padding: 10mm;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        .quotation-title {
+            text-align: center;
+            font-size: 13pt;
+            font-weight: bold;
+            padding: 6px 0 10px 0;
+            letter-spacing: 3px;
+        }
+
+        .quotation-wrapper {
+            width: 100%;
+            max-width: 190mm;
+            margin: 0 auto;
+            border: 1px solid #262626;
+            background: #fff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .label-small {
+            font-size: 8pt;
+            color: #464646;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .invoice-box {
+            padding: 5px 6px;
+        }
+
+        .invoice-details-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .invoice-details-table td {
+                padding: 0;
+            }
+
+        .address-terms-cell {
+            padding: 5px 6px;
+            font-size: 8.5pt;
+            line-height: 1.3;
+        }
+
+        .company-bold {
+            font-weight: bold;
+            font-size: 9pt;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .items-table th {
+            border-bottom: 1px solid #262626;
+            border-right: 1px solid #262626;
+            padding: 5px 4px;
+            font-size: 8.5pt;
+            font-weight: bold;
+            text-align: center;
+        }
+
+            .items-table th:last-child {
+                border-right: none;
+            }
+
+        .items-table td {
+            border-right: 1px solid #262626;
+            padding: 4px 5px;
+            font-size: 8.5pt;
+        }
+
+            .items-table td:last-child {
+                border-right: none;
+            }
+
+        .col-si {
+            width: 6%;
+            text-align: center;
+        }
+
+        .col-desc {
+            width: 33%;
+        }
+
+        .col-hsn {
+            width: 12%;
+            text-align: center;
+        }
+
+        .col-dueon {
+            width: 9%;
+            text-align: center;
+        }
+
+        .col-qty {
+            width: 11%;
+            text-align: center;
+        }
+
+        .col-rate {
+            width: 10%;
+            text-align: right;
+        }
+
+        .col-per {
+            width: 6%;
+            text-align: center;
+        }
+
+        .col-amount {
+            width: 14%;
+            text-align: right;
+        }
+
+        .items-table .tax-row td {
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        .items-table .total-row td {
+            border-top: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+            padding: 5px 6px;
+            font-weight: bold;
+        }
+
+        .amount-words-table td {
+            padding: 5px 6px;
+            font-size: 8.5pt;
+        }
+
+        .footer-table td {
+            padding: 6px;
+            font-size: 8pt;
+        }
+
+        .computer-generated {
+            text-align: center;
+            font-size: 8pt;
+            font-style: italic;
+            padding: 6px 0 0 0;
+            color: #262626;
+        }
+
+        /* ---- layout: top section (company / consignee / buyer + meta) ---- */
+
+        .top-section-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-bottom: 1px solid #262626;
+        }
+
+        .left-column {
+            width: 40%;
+            border-right: 1px solid #262626;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .right-column {
+            width: 45%;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .invoice-box-bordered {
+            border-bottom: 1px solid #262626;
+        }
+
+        .logo-cell {
+            width: 60px;
+            vertical-align: top;
+            padding-right: 6px;
+            padding-top: 2px;
+        }
+
+        .logo-img {
+            display: block;
+            object-fit: contain;
+        }
+
+        .company-info-cell {
+            vertical-align: top;
+            font-size: 8.5pt;
+            line-height: 1.3;
+        }
+
+        .consignee-block {
+            border-bottom: 1px solid #262626;
+            min-height: 140px;
+            max-width: 100%;
+        }
+
+        .buyer-block {
+            min-height: 140px;
+        }
+
+        .terms-delivery-block {
+            min-height: 220px;
+        }
+
+        .label-gstin {
+            padding-right: 20px;
+        }
+
+        .label-state {
+            padding-right: 18px;
+        }
+
+        /* ---- meta grid (quotation no. / dated / payment / references) ---- */
+
+        .meta-cell-br-bb-h39 {
+            width: 50%;
+            border-right: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+            padding: 4px 6px;
+            height: 39px;
+        }
+
+        .meta-cell-bb-h39 {
+            width: 50%;
+            border-bottom: 1px solid #262626;
+            padding: 4px 6px;
+            height: 39px;
+        }
+
+        .meta-cell-br-bb-h40 {
+            width: 50%;
+            border-right: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+            padding: 4px 6px;
+            height: 40px;
+        }
+
+        .meta-cell-bb-h40 {
+            width: 50%;
+            border-bottom: 1px solid #262626;
+            padding: 4px 6px;
+            height: 40px;
+        }
+
+        .meta-cell-h40 {
+            width: 50%;
+            padding: 4px 6px;
+            height: 40px;
+        }
+
+        /* ---- items table: total row overrides ---- */
+
+        .total-desc-cell {
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .total-qty-cell {
+            max-width: 100px;
+        }
+
+        /* ---- amount in words / footer / signature ---- */
+
+        .words-cell {
+            width: 75%;
+            line-height: 1.4;
+        }
+
+        .eoe-cell {
+            width: 25%;
+            text-align: right;
+            vertical-align: top;
+            font-style: italic;
+            font-size: 8pt;
+            padding-bottom: 4px;
+        }
+
+        .footer-empty-cell {
+            width: 65%;
+        }
+
+        .footer-signature-cell {
+            width: 35%;
+            padding: 0 !important;
+            vertical-align: top;
+        }
+
+        .signature-table {
+            width: 100%;
+            border-collapse: collapse;
+            height: 100%;
+            border-left: 1px solid #262626;
+        }
+
+        .signature-company-cell {
+            padding: 4px 6px 0 6px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 8.5pt;
+            border-top: 1px solid #262626;
+        }
+
+        .signature-line-cell {
+            height: 90px;
+            vertical-align: bottom;
+            text-align: right;
+            padding: 60px 6px 2px 6px;
+        }
+
+        .signatory-label {
+            font-size: 8pt;
+            font-style: italic;
+            display: inline-block;
+        }
+
+        /* ---- items table: tax label cell + filler spacer row ---- */
+
+        .tax-label-cell {
+            text-align: right;
+            padding-right: 15px;
+            font-style: italic;
+        }
+
+        .filler-row {
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quotation-title">QUOTATION</div>
+
+    <div class="quotation-wrapper">
+        <table class="top-section-table">
+            <tr>
+                <td class="left-column">
+                    <div class="invoice-box invoice-box-bordered">
+                        <table class="invoice-details-table">
+                            <tr>
+                                <td class="logo-cell">
+                                    #CompanyLogoImage#
+                                </td>
+                                <td class="company-info-cell">
+                                    <strong class="company-bold">#QuotationToCompanyName#</strong>
+                                    #QuotationToAddress#<br />
+                                    GSTIN/UIN &nbsp;: #QuotationToGSTIN#<br />
+                                    State Name : #CompanyStateName#, Code : #CompanyStateCode#<br />
+                                    E-Mail : #CompanyEmail#<br />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="address-terms-cell consignee-block">
+                        <span class="label-small">Consignee (Ship to)</span>
+                        <strong class="company-bold">#ConsigneeCompanyName#</strong>
+                        <div>#ConsigneeAddress#</div><br />
+                        <div>
+                            <span class="label-gstin">GSTIN/UIN:</span>
+                            #ConsigneeGSTIN#<br />
+                        </div>
+                        <div>
+                            <span class="label-state">State Name:</span>
+                            #ConsigneeStateName#, Code : #ConsigneeStateCode#<br />
+                        </div>
+                    </div>
+
+                    <div class="address-terms-cell buyer-block">
+                        <span class="label-small">Buyer (Bill to)</span>
+                        <strong class="company-bold">#BuyerName#</strong>
+                        <div>#BuyerAddress#</div><br />
+                        <div>
+                            <span class="label-gstin">GSTIN/UIN:</span>
+                            #BuyerGSTIN#<br />
+                        </div>
+                        <div>
+                            <span class="label-state">State Name:</span>
+                            #BuyerStateName#, Code : #BuyerStateCode#<br />
+                        </div>
+                    </div>
+                </td>
+
+                <td class="right-column">
+                    <table class="top-section-table">
+                        <tr>
+                            <td class="meta-cell-br-bb-h39">
+                                <span class="label-small">Quotation No.</span>
+                                <strong>#QuotationReferenceNo#</strong>
+                            </td>
+                            <td class="meta-cell-bb-h39">
+                                <span class="label-small">Dated</span>
+                                <strong>#QuotationDate#</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="meta-cell-br-bb-h39">&nbsp;</td>
+
+                            <td class="meta-cell-bb-h39">
+                                <span class="label-small">Mode/Terms of Payment</span>
+                                <strong>#PaymentTerms#</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="meta-cell-br-bb-h40">
+                                <span class="label-small">Buyer's Ref./Order No.</span>
+                                <strong>#BuyersReferenceOrderNumber#</strong>
+                            </td>
+
+                            <td class="meta-cell-bb-h40">
+                                <span class="label-small">Other References</span>
+                                <strong>#OtherReferences#</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="meta-cell-br-bb-h40">
+                                <span class="label-small">Dispatched through</span>
+                                <strong>#DispatchedThrough#</strong>
+                            </td>
+
+                            <td class="meta-cell-h40">
+                                <span class="label-small">Destination</span>
+                                <strong>#Destination#</strong>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="address-terms-cell terms-delivery-block">
+                        <span class="label-small">Terms of Delivery</span>
+                        <strong>#TermsOfDelivery#</strong>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th class="col-si">Sl<br />No.</th>
+                    <th class="col-desc">Description of<br />Goods and Services</th>
+                    <th class="col-hsn">HSN/SAC</th>
+                    <th class="col-dueon">Due on</th>
+                    <th class="col-qty">Quantity</th>
+                    <th class="col-rate">Rate</th>
+                    <th class="col-per">per</th>
+                    <th class="col-amount">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Repeating Item Rows -->
+                #ItemRows#
+
+                <!-- CGST Row (Only rendered if CgstAmount is present) -->
+                #CGSTRows#
+
+
+                <!-- SGST Row (Only rendered if SgstAmount is present) -->
+                #SGSTRows#
+
+                <!-- IGST Row (Only rendered if IgstAmount is present) -->
+                #IGSTRows#
+
+                #DefaultRows#
+
+                <!-- TOTAL ROW -->
+                #TotalRows#
+            </tbody>
+        </table>
+
+        <table class="amount-words-table">
+            <tr>
+                <td class="words-cell">
+                    <span class="label-small">Amount Chargeable (in words)</span>
+                    <strong>#AmountInWords#</strong>
+                </td>
+                <td class="eoe-cell">E. &amp; O.E</td>
+            </tr>
+        </table>
+
+        <table class="footer-table">
+            <tr>
+                <td class="footer-empty-cell">&nbsp;</td>
+
+                <td class="footer-signature-cell">
+                    <table class="signature-table">
+                        <tr>
+                            <td colspan="2" class="signature-company-cell">
+                                for INSPIRE MAGNETICS PRIVATE LIMITED
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="signature-line-cell">
+                                <span class="signatory-label"> Authorised Signatory </span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="computer-generated">This is a Computer Generated Document</div>
+</body>
+</html>

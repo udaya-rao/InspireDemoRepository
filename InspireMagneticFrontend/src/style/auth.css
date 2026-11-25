@@ -1,0 +1,271 @@
+.auth-page-root {
+  background: #f8fafc;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.auth-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.auth-content-wrapper {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  max-width: 400px;
+  width: 100%;
+  background: rgb(0 0 0 / 16%);
+  transition: transform 0.2s cubic-bezier(.4, 2, .6, 1),
+    box-shadow 0.2s cubic-bezier(.4, 2, .6, 1);
+  transform: scale(1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card--hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.auth-card--wide {
+  max-width: 420px;
+}
+
+.auth-change-password-card-body {
+  padding: 0.5rem 2.5rem;
+}
+
+.auth-logo {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  width: 120px;
+}
+
+.auth-text-light {
+  color: #fff !important;
+}
+
+.auth-muted-note {
+  color: #fff;
+  font-size: 12px;
+}
+
+.auth-link-light {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.auth-link-light:hover,
+.auth-link-light:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.auth-disabled-input {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+.auth-password-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.auth-remember-text {
+  color: #fff;
+}
+
+.auth-dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-dialog {
+  background: #fff;
+  border-radius: 10px;
+  min-width: 320px;
+  max-width: 90vw;
+  padding: 32px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.auth-dialog-title {
+  margin-bottom: 16px;
+}
+
+.auth-dialog-message {
+  margin-bottom: 24px;
+}
+
+.auth-dialog-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.auth-dialog-btn {
+  min-width: 120px;
+}
+
+.auth-drawer-wrapper {
+  padding: 8px;
+}
+
+.auth-toggle-eye {
+  position: absolute;
+  right: 12px;
+  top: 36px;
+  cursor: pointer;
+  color: #888;
+  z-index: 2;
+}
+
+.auth-message {
+  margin-top: 8px;
+}
+
+.auth-password-field {
+  position: relative;
+}
+
+.auth-password-field .form-control {
+  padding-right: 40px;
+}
+
+.auth-alert {
+  background: rgba(255, 0, 0, 0.1);
+  color: #fff;
+  border-color: rgba(255, 0, 0, 0.25);
+}
+
+.auth-error-text {
+  color: #ff6b6b !important;
+}
+
+.auth-loading-gap {
+  height: 16px;
+}
+
+.auth-no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.auth-otp-message {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.auth-otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.auth-otp-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 22px;
+  border: 1px solid #d0d7e1;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.auth-otp-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.auth-otp-btn {
+  min-width: 100px;
+}
+
+.auth-otp-resend {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.auth-otp-resend-link {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.auth-otp-resend-msg {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.auth-otp-resend-msg--success {
+  color: #1976d2;
+}
+
+.auth-otp-resend-msg--error {
+  color: #e74c3c;
+}
+
+/* Revert global compact heights for Auth screens */
+.auth-page-root .form-control:not(textarea):not([placeholder^="Search"]):not([type="search"]) {
+  padding: 0.5625rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  line-height: 1.4285714 !important;
+}
+
+.auth-page-root .input-group {
+  height: 40px !important;
+  min-height: 40px !important;
+}
+
+.auth-page-root .input-group-text {
+  padding: 0.5625rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  height: 40px !important;
+}
+

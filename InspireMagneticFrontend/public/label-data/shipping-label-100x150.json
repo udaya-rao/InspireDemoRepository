@@ -1,0 +1,21 @@
+{
+  "template": "shipping-label-100x150",
+  "data": [
+    {
+      "orderId": "ORD-10482",
+      "courier": "BlueDart",
+      "weight": "1.2 kg",
+      "customer": {
+        "name": "Anita Rao",
+        "phone": "98450 12345"
+      },
+      "address": {
+        "line1": "12, 3rd Cross, Kadri",
+        "line2": "Near Pumpwell Circle",
+        "city": "Mangaluru",
+        "state": "Karnataka",
+        "pin": "575002"
+      }
+    }
+  ]
+}
