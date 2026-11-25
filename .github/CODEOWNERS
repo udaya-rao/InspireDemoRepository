@@ -1,0 +1,5 @@
+# Default code owners for all files
+* @udaya-rao
+
+# Protect the CODEOWNERS file
+/.github/CODEOWNERS @udaya-rao
