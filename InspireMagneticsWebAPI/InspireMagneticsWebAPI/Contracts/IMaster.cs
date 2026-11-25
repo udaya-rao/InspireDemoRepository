@@ -937,7 +937,7 @@ namespace InspireMagneticsWebAPI.Contracts
 
 
         /// <summary>
-        /// This Method Is Used to Get Supplier Item List.
+        /// This Method Is Used to Get Supplier Item List...
         /// </summary>
         /// <param name="_objODBCHelper"></param>
         /// <param name="_objSupplierItemsSearchListRequestParam"></param>
