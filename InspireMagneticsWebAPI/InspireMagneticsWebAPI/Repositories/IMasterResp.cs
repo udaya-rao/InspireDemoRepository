@@ -5123,7 +5123,7 @@ namespace InspireMagneticsWebAPI.Repositories
         }
 
         /// <summary>
-        /// This Method Is Used to Get Supplier Item Details.
+        /// This Method Is Used to Get Supplier Item Details..
         /// </summary>
         /// <param name="_objODBCHelper"></param>
         /// <param name="_objSupplierItemsDetailsRequestParam"></param>
