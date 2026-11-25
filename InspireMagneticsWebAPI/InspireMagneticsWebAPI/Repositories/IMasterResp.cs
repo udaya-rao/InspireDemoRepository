@@ -5147,46 +5147,7 @@ namespace InspireMagneticsWebAPI.Repositories
             return finalDataSet;
         }
 
-        public async Task<DataSet> GetSupplierItemDetailsTest(ODBCHelper _objODBCHelper, SupplierItemsDetailsRequestParam _objSupplierItemsDetailsRequestParam)
-        {
-            DataSet finalDataSet = new DataSet();
-            string TableName = "SUPPLIER_ITEM_DETAIL_RESPONSE";
-            try
-            {
-                SupplierItems _objSupplierItems = Helper.ToCopyClassProperties<SupplierItemsDetailsRequestParam, SupplierItems>(_objSupplierItemsDetailsRequestParam);
-                _objSupplierItems.ParamType = "GetSupplierItemDetails";
-                finalDataSet = await _objODBCHelper.ExecuteXMLStoredProcedure(_objSupplierItems, Helper.XML_PARAMS, StoredProcedure.SUPPLIER_ITEMS);
-                finalDataSet = Helper.CheckAndValidateDatasetTable(finalDataSet, TableName);
-            }
-            catch (Exception ex)
-            {
-                Helper.LogMessage(CommonHelper.KeyOption.APIErrorLog, LogNameSpaceConstants.RepositoriesLogNamespace, $"{IMasterRespLogClassName}.GetSupplierItemDetails()", ex.Message, false);
-                throw;
-            }
-            return finalDataSet;
-        }
-
-        public async Task<DataSet> GetSupplierItemDetailsTestMethod(ODBCHelper _objODBCHelper, SupplierItemsDetailsRequestParam _objSupplierItemsDetailsRequestParam)
-        {
-            DataSet finalDataSet = new DataSet();
-            DataSet ds = new DataSet();
-            string TableName = "SUPPLIER_ITEM_DETAIL_RESPONSE";
-            try
-            {
-                SupplierItems _objSupplierItems = Helper.ToCopyClassProperties<SupplierItemsDetailsRequestParam, SupplierItems>(_objSupplierItemsDetailsRequestParam);
-                _objSupplierItems.ParamType = "GetSupplierItemDetails";
-                var ds1 = await _objODBCHelper.ExecuteXMLStoredProcedure(_objSupplierItems, Helper.XML_PARAMS, StoredProcedure.SUPPLIER_ITEMS);
-                finalDataSet = Helper.CheckAndValidateDatasetTable(finalDataSet, TableName);
-            }
-            catch (Exception ex)
-            {
-                Helper.LogMessage(CommonHelper.KeyOption.APIErrorLog, LogNameSpaceConstants.RepositoriesLogNamespace, $"{IMasterRespLogClassName}.GetSupplierItemDetails()", ex.Message, false);
-                throw;
-            }
-            return finalDataSet;
-        }
-
-        public async Task<DataSet> GetSupplierItemDetailsDemoMethod(ODBCHelper _objODBCHelper, SupplierDemoItemsDetailsRequestParam _objSupplierItemsDetailsRequestParam)
+        public async Task<DataSet> GetSupplierItemDetailsDemoTestMethod(ODBCHelper _objODBCHelper, SupplierDemoItemsDetailsRequestParam _objSupplierItemsDetailsRequestParam)
         {
             DataSet finalDataSet = new DataSet();
             DataSet ds = new DataSet();
