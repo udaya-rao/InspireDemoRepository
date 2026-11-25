@@ -5076,7 +5076,7 @@ namespace InspireMagneticsWebAPI.Repositories
         #region [Supplier Items]
 
         /// <summary>
-        /// This Method Is Used To Save and Update Delivery Note Details.
+        /// This Method Is Used To Save and Update Delivery Note Details..
         /// </summary>
         /// <param name="_objODBCHelper"></param>
         /// <param name="_objSupplierItems"></param>
